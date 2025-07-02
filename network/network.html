@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Country Map Example</title>
+    <script src="mapdata.js"></script>
+    <script src="countrymap.js"></script>
+    <link rel="stylesheet" href="/network/network.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="/index.html" class="hlogo"><img src="/asset/Logo/Abtik white.png" alt="Logo"></a>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about-us/about.html">About us</a></li>
+                    <li><a href="/service/service.html">Services</a></li>
+                    <li><a href="/news/news.html">News</a></li>
+                    <li><a href="/career/career.html">Careers</a></li>
+                    <li><a href="/contact/contact.html">Contact</a></li>
+                    <li class="cta-button">
+                        <a href="/get-in-touch/get.html">
+                            <button class="animated-button">
+                                Get In Touch
+                                <span class="arrow-box">
+                                    <img src="/asset/white-arrow.svg" alt="arrow-icon" class="arrow-icon">
+                                </span>
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Map -->
+    <section class="map-section">
+        <div id="map"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="logo">
+                    <img src="/asset/Logo/Abtik white.png" alt="">
+                </div>
+                <div class="email-subscribe">
+                    <input type="email" placeholder="email@AbtikServices">
+                    <button class="send-btn">
+                        <span class="arrow">
+                            <img src="/asset/white-arrow.svg" alt="arrow-icon">
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="contact-info">
+                    <h2 style="color: white;">Visit On</h2>
+                    <p>313, Patel Ave., S.G Highway, Thaltej, <br> Ahmedabad, Gujarat 380054</p>
+                    <h2 style="color: white;">For call</h2>
+                    <p>Monday-Saturday: 10am-7pm <br> +91 89281 38434</p>
+                    <h2 style="color: white;">If You Have Any Query</h2>
+                    <p>+91 98988 02140</p>
+                </div>
+                <div class="footer-column">
+                    <h3>services</h3>
+                    <a href="/service/asset/certification.html">Certification</a>
+                    <a href="/service/asset/loan.html">Loan services</a>
+                    <a href="/service/asset/funding.html">Funding</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="#">Our Story</a>
+                    <a href="/index.html">Home</a>
+                    <a href="/news/news.html">News</a>
+                    <a href="/about-us/about.html">About-us</a>
+                    <a href="/career/career.html">Career</a>
+                    <a href="/contact/contact.html">Contact Us</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <a href="#">Terms of Service</a>
+                    <a href="/asset/policies/privacy.html">Privacy Policy</a>
+                    <a href="/asset/policies/cancellation.html">Cancellation & Refund Policy</a>
+                </div>
+            </div>
+        </div>
+        <div class="social-icons">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(8.53333,8.53333)">
+                        <path
+                            d="M15,3c-6.627,0 -12,5.373 -12,12c0,6.016 4.432,10.984 10.206,11.852v-8.672h-2.969v-3.154h2.969v-2.099c0,-3.475 1.693,-5 4.581,-5c1.383,0 2.115,0.103 2.461,0.149v2.753h-1.97c-1.226,0 -1.654,1.163 -1.654,2.473v1.724h3.593l-0.487,3.154h-3.106v8.697c5.857,-0.794 10.376,-5.802 10.376,-11.877c0,-6.627 -5.373,-12 -12,-12z">
+                        </path>
+                    </g>
+                </g>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(8.53333,8.53333)">
+                        <path
+                            d="M15,2c-7.168,0 -13,5.832 -13,13c0,7.168 5.832,13 13,13c7.168,0 13,-5.832 13,-13c0,-7.168 -5.832,-13 -13,-13zM11.66602,6h6.66602c3.125,0 5.66797,2.54202 5.66797,5.66602v6.66602c0,3.125 -2.54202,5.66797 -5.66602,5.66797h-6.66602c-3.125,0 -5.66797,-2.54202 -5.66797,-5.66602v-6.66602c0,-3.125 2.54202,-5.66797 5.66602,-5.66797zM11.66602,8c-2.021,0 -3.66602,1.64597 -3.66602,3.66797v6.66602c0,2.021 1.64597,3.66602 3.66797,3.66602h6.66602c2.021,0 3.66602,-1.64597 3.66602,-3.66797v-6.66601c0,-2.021 -1.64597,-3.66602 -3.66797,-3.66602zM19.66797,9.66602c0.368,0 0.66602,0.29802 0.66602,0.66602c0,0.368 -0.29801,0.66797 -0.66602,0.66797c-0.368,0 -0.66797,-0.29997 -0.66797,-0.66797c0,-0.368 0.29997,-0.66602 0.66797,-0.66602zM15,10c2.757,0 5,2.243 5,5c0,2.757 -2.243,5 -5,5c-2.757,0 -5,-2.243 -5,-5c0,-2.757 2.243,-5 5,-5zM15,12c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z">
+                        </path>
+                    </g>
+                </g>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(5.12,5.12)">
+                        <path
+                            d="M25,2c-12.682,0 -23,10.317 -23,23c0,12.683 10.318,23 23,23c12.682,0 23,-10.317 23,-23c0,-12.683 -10.318,-23 -23,-23zM18,35h-4v-15h4zM16,17c-1.105,0 -2,-0.895 -2,-2c0,-1.105 0.895,-2 2,-2c1.105,0 2,0.895 2,2c0,1.105 -0.895,2 -2,2zM37,35h-4v-5v-2.5c0,-1.925 -1.575,-3.5 -3.5,-3.5c-1.925,0 -3.5,1.575 -3.5,3.5v7.5h-4v-15h4v1.816c1.168,-1.122 2.752,-1.816 4.5,-1.816c3.59,0 6.5,2.91 6.5,6.5z">
+                        </path>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <div class="footer-bottom">
+            <p class="right"> Made by Abtik Digital. <a href="">@Abtikdigital</a></p>
+            <p class="center">© 2024 AbtikServices. All Rights Reserved. <a href="#">@AbtikServices</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>

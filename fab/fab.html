@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/fab/fab.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Floating Action Button -->
+    <div class="fab-container">
+        <div class="fab-main">
+            <button class="fab-button">
+                <span class="fab-icon">+</span>
+            </button>
+            <div class="fab-actions">
+                <button class="fab-action" id="fab-chatbot">
+                    <i class="fa-solid fa-message"></i>
+                    <span class="tooltip">Chatbot</span>
+                </button>
+                <button class="fab-action" id="fab-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="tooltip">WhatsApp</span>
+                </button>
+                <button class="fab-action" id="fab-call">
+                    <i class="fas fa-phone"></i>
+                    <span class="tooltip">Call Us</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Chatbot Container -->
+        <div class="fab-chatbot">
+            <div class="chatbot-header">
+                <h3>Abtik Assistant</h3>
+                <button class="close-chatbot">×</button>
+            </div>
+            <div class="chatbot-messages">
+                <div class="chatbot-message bot-message">
+                    <p>Hello! I'm Abtik Assistant. How can I help you today?</p>
+                    <div class="chat-suggestions">
+                        <button class="chat-suggestion">What services do you offer?</button>
+                        <button class="chat-suggestion">How can I contact support?</button>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" placeholder="Type your message..." class="chatbot-text-input">
+                <button class="chatbot-send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/fab/fab.js"></script>
+</body>
+
+</html>

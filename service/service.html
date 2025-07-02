@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/service/service.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="../asset/Logo/Abtik white.png" alt="Loading..." style="width: 100px; height: auto;">
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" style="display: none;">
+        <!-- HEADER -->
+        <header>
+            <div class="container">
+                <a href="/index.html" class="hlogo"><img src="/asset/Logo/Abtik white.png" alt="Logo"></a>
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about-us/about.html">About us</a></li>
+                        <li><a href="/service/service.html" class="active">Services</a></li>
+                        <li><a href="/news/news.html">News</a></li>
+                        <li><a href="/career/career.html">Careers</a></li>
+                        <li><a href="/contact/contact.html">Contact</a></li>
+                        <!-- <li><a href="/network/network.html">Network</a></li> -->
+                    </ul>
+                    <div class="cta-button">
+                        <a href="/get-in-touch/get.html">
+                            <button class="animated-button">
+                                Get In Touch
+                                <span class="arrow-box">
+                                    <img src="/asset/white-arrow.svg" alt="arrow-icon" class="arrow-icon">
+                                </span>
+                            </button>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-left">
+                <h2>From Vision to Venture — We Make It Happen.</h2>
+                <p>Expert solutions for registrations, compliance, funding & certifications <br>all under one roof.
+                    Scale
+                    smarter with our
+                    tailored consultancy services.</p>
+            </div>
+            <div class="hero-right">
+                <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <!-- Simplified gradients -->
+                        <linearGradient id="funding-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#4361ee" />
+                            <stop offset="100%" stop-color="#3a0ca3" />
+                        </linearGradient>
+                        <linearGradient id="loans-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#4cc9f0" />
+                            <stop offset="100%" stop-color="#4895ef" />
+                        </linearGradient>
+                        <linearGradient id="cert-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#f72585" />
+                            <stop offset="100%" stop-color="#b5179e" />
+                        </linearGradient>
+                        <linearGradient id="consult-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#4ade80" />
+                            <stop offset="100%" stop-color="#16a34a" />
+                        </linearGradient>
+
+                        <!-- Single glow filter -->
+                        <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+                            <feGaussianBlur stdDeviation="3" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+
+                    <!-- Background removed as per request -->
+
+                    <!-- Center logo -->
+                    <g class="logo-group">
+                        <circle cx="400" cy="170" r="50" fill="#001E3C" stroke="#fff" stroke-width="1.5" />
+                        <text x="400" y="175" font-family="Arial" font-size="20" text-anchor="middle" fill="#fff"
+                            font-weight="bold">ABTIK</text>
+
+                        <!-- Optimized ripple animation -->
+                        <circle cx="400" cy="170" r="10" fill="none" stroke="#fff" stroke-width="0.5"
+                            stroke-opacity="0.7">
+                            <animate attributeName="r" values="10;40;10" dur="8s" repeatCount="indefinite" />
+                            <animate attributeName="stroke-opacity" values="0.7;0;0.7" dur="8s"
+                                repeatCount="indefinite" />
+                        </circle>
+                    </g>
+
+                    <!-- Service cards with consistent animation -->
+                    <g class="service-card" transform="translate(150,90)">
+                        <rect width="120" height="80" rx="10" fill="url(#loans-gradient)" filter="url(#glow)" />
+                        <text x="60" y="35" font-family="Arial" font-size="14" text-anchor="middle" fill="#fff"
+                            font-weight="bold">LOANS</text>
+                        <path d="M32,55 C32,50 88,50 88,55" fill="none" stroke="#fff" stroke-width="1" />
+                        <path d="M40,20 L80,20" stroke="#fff" stroke-width="1" />
+                        <circle cx="30" cy="20" r="3" fill="#fff" />
+                        <animateTransform attributeName="transform" type="translate" values="150,90;150,85;150,90"
+                            dur="4s" repeatCount="indefinite" />
+                    </g>
+
+                    <g class="service-card" transform="translate(530,90)">
+                        <rect width="120" height="80" rx="10" fill="url(#funding-gradient)" filter="url(#glow)" />
+                        <text x="60" y="35" font-family="Arial" font-size="14" text-anchor="middle" fill="#fff"
+                            font-weight="bold">FUNDING</text>
+                        <circle cx="38" cy="47" r="10" fill="none" stroke="#fff" stroke-width="1" />
+                        <path d="M35,40 L41,47 L35,54" fill="none" stroke="#fff" stroke-width="1" />
+                        <circle cx="82" cy="47" r="10" fill="none" stroke="#fff" stroke-width="1" />
+                        <path d="M75,47 L82,40 L89,47" fill="none" stroke="#fff" stroke-width="1" />
+                        <animateTransform attributeName="transform" type="translate" values="530,90;530,85;530,90"
+                            dur="5s" repeatCount="indefinite" begin="1s" />
+                    </g>
+
+                    <g class="service-card" transform="translate(150,230)">
+                        <rect width="120" height="80" rx="10" fill="url(#cert-gradient)" filter="url(#glow)" />
+                        <text x="60" y="65" font-family="Arial" font-size="14" text-anchor="middle" fill="#fff"
+                            font-weight="bold">CERTIFICATION</text>
+                        <path d="M35,45 L45,55 L60,45 L70,50 L85,40" fill="none" stroke="#fff" stroke-width="1.5" />
+                        <circle cx="35" cy="45" r="3" fill="#fff" />
+                        <circle cx="85" cy="40" r="3" fill="#fff" />
+                        <animateTransform attributeName="transform" type="translate" values="150,230;150,225;150,230"
+                            dur="6s" repeatCount="indefinite" begin="0.5s" />
+                    </g>
+
+                    <g class="service-card" transform="translate(530,230)">
+                        <rect width="120" height="80" rx="10" fill="url(#consult-gradient)" filter="url(#glow)" />
+                        <text x="60" y="65" font-family="Arial" font-size="14" text-anchor="middle" fill="#fff"
+                            font-weight="bold">CONSULTATION</text>
+                        <circle cx="40" cy="40" r="8" fill="none" stroke="#fff" stroke-width="1" />
+                        <circle cx="80" cy="40" r="8" fill="none" stroke="#fff" stroke-width="1" />
+                        <path d="M40,50 C40,70 80,70 80,50" fill="none" stroke="#fff" stroke-width="1" />
+                        <animateTransform attributeName="transform" type="translate" values="530,230;530,225;530,230"
+                            dur="7s" repeatCount="indefinite" begin="1.5s" />
+                    </g>
+
+                    <!-- Connection lines -->
+                    <g class="connections" stroke-opacity="0.6" stroke-width="1.5">
+                        <path d="M400,170 C350,140 280,130 210,130" stroke="#4cc9f0" fill="none" />
+                        <path d="M400,170 C450,140 520,130 590,130" stroke="#4361ee" fill="none" />
+                        <path d="M400,170 C350,200 280,230 210,230" stroke="#f72585" fill="none" />
+                        <path d="M400,170 C450,200 520,230 590,230" stroke="#4ade80" fill="none" />
+                    </g>
+
+                    <!-- Digital particles -->
+                    <g class="particles">
+                        <circle cx="350" cy="150" r="2" fill="#4cc9f0">
+                            <animate attributeName="cx" values="350;360;350" dur="5s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="380" cy="210" r="2" fill="#f72585">
+                            <animate attributeName="cy" values="210;200;210" dur="4s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="420" cy="210" r="2" fill="#4ade80">
+                            <animate attributeName="r" values="2;3;2" dur="3s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="450" cy="150" r="2" fill="#4361ee">
+                            <animate attributeName="cx" values="450;440;450" dur="6s" repeatCount="indefinite" />
+                        </circle>
+                    </g>
+                </svg>
+            </div>
+
+        </section>
+
+        <!-- Services Section -->
+
+        <section id="services">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-box">
+                    <svg fill="#000000" width="800px" height="800px" viewBox="0 0 32 32" data-name="Layer 1"
+                        id="Layer_1" xmlns="http://www.w3.org/2000/svg">
+                        <rect height="1" transform="translate(22 51) rotate(180)" width="18" x="2" y="25" fill="#fff">
+                        </rect>
+                        <rect height="1" transform="translate(27 59) rotate(180)" width="17" x="5" y="29" fill="#fff">
+                        </rect>
+                        <rect height="1" transform="translate(40 -9) rotate(90)" width="19" x="15" y="15" fill="#fff">
+                        </rect>
+                        <rect height="1" transform="translate(21 10) rotate(90)" width="19" x="-4" y="15" fill="#fff">
+                        </rect>
+                        <path d="M25,25H24v2a2,2,0,0,1-2,2h0v1h0a3,3,0,0,0,3-3Z" fill="#fff"></path>
+                        <path d="M19,26h1v1a2,2,0,0,0,2,2h0v1h0a3,3,0,0,1-3-3Z" fill="#fff"></path>
+                        <path d="M2,26H3v1a2,2,0,0,0,2,2H6v1H5a3,3,0,0,1-3-3Z" fill="#fff"></path>
+                        <rect height="1" width="5" x="25" y="6" fill="#fff"></rect>
+                        <rect height="1" width="19" x="8" y="2" fill="#fff"></rect>
+                        <path d="M5,6H6V5A2,2,0,0,1,8,3H9V2H8A3,3,0,0,0,5,5Z" fill="#fff"></path>
+                        <path d="M24,6h1V5a2,2,0,0,1,2-2h0V2h0a3,3,0,0,0-3,3Z" fill="#fff"></path>
+                        <path d="M30,6H29V5a2,2,0,0,0-2-2h0V2h0a3,3,0,0,1,3,3Z" fill="#fff"></path>
+                        <path d="M12,9a3,3,0,1,1,3,3A3,3,0,0,1,12,9Zm1,0a2,2,0,1,0,2-2A2,2,0,0,0,13,9Z" fill="#fff">
+                        </path>
+                        <polygon points="14 15 15 14 15 11 14 11 14 15" fill="#fff"></polygon>
+                        <polygon points="15 14 16 15 16 11 15 11 15 14" fill="#fff"></polygon>
+                        <rect height="1" width="9" x="12" y="18" fill="#fff"></rect>
+                        <rect height="1" width="2" x="9" y="18" fill="#fff"></rect>
+                        <rect height="1" width="9" x="12" y="21" fill="#fff"></rect>
+                        <rect height="1" width="2" x="9" y="21" fill="#fff"></rect>
+                    </svg>
+                    <h3>Certification</h3>
+                    <p class="service-desc">Unlock your business’s potential with hassle-free certification services. We
+                        guide you through industry-specific licenses, Startup India Certificate, Tax-Exemption, ISO
+                        certifications, and regulatory approvals to enhance credibility and compliance.</p>
+                    <button onclick="location.href='/service/asset/certification.html'">Show More</button>
+                </div>
+                <div class="service-box">
+                    <svg fill="#000000" width="800px" height="800px" viewBox="0 0 512 512"
+                        enable-background="new 0 0 512 512" id="ROI" version="1.1" xml:space="preserve"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                        <g fill="#fff">
+                            <path
+                                d="M266.533,114.519c-55.518,0-100.687,45.168-100.687,100.687c0,16.021,3.858,31.964,11.153,46.104   c1.713,3.325,5.803,4.627,9.126,2.915c3.325-1.716,4.631-5.801,2.914-9.126c-6.399-12.404-9.645-25.826-9.645-39.893   c0-48.049,39.089-87.138,87.138-87.138s87.139,39.089,87.139,87.138c0,28.891-14.283,55.85-38.211,72.115   c-3.094,2.104-3.896,6.317-1.793,9.412c1.312,1.928,3.439,2.965,5.607,2.965c1.313,0,2.637-0.38,3.803-1.172   c27.642-18.791,44.143-49.938,44.143-83.32C367.221,159.687,322.053,114.519,266.533,114.519z"
+                                fill="#fff"></path>
+                            <path
+                                d="M288.548,279.445c0.806,0,1.625-0.146,2.423-0.452c26.231-10.056,43.854-35.689,43.854-63.788   c0-37.657-30.635-68.292-68.292-68.292c-37.656,0-68.294,30.635-68.294,68.292c0,17.505,6.616,34.151,18.63,46.875   c2.566,2.721,6.855,2.847,9.575,0.276c2.722-2.569,2.845-6.855,0.275-9.575c-9.628-10.201-14.932-23.546-14.932-37.576   c0-30.185,24.559-54.743,54.745-54.743c30.186,0,54.744,24.558,54.744,54.743c0,22.527-14.129,43.076-35.156,51.138   c-3.493,1.34-5.239,5.258-3.901,8.751C283.254,277.789,285.822,279.445,288.548,279.445z"
+                                fill="#fff"></path>
+
+                            <path
+                                d="M139.154,291.404c3.741,0,6.774-3.034,6.774-6.775c0-3.74-3.033-6.773-6.774-6.773H120.2c-3.74,0-6.773,3.033-6.773,6.773   v94.236c0,3.74,3.033,6.774,6.773,6.774h43.683h123.129c16.077,0,31.971-5.372,44.752-15.127l41.123-31.384   c11.452-8.738,13.832-25.293,5.306-36.902c-8.536-11.625-25.058-14.301-36.831-5.965l-21.052,14.91   c-3.053,2.163-3.774,6.391-1.612,9.445c2.164,3.051,6.391,3.773,9.444,1.612l21.053-14.911c5.78-4.096,13.891-2.776,18.077,2.928   c4.187,5.699,3.019,13.824-2.603,18.113l-41.124,31.383c-10.436,7.964-23.408,12.349-36.533,12.349H170.657v-80.687h45.86   c7.957,0,15.471,3.062,21.159,8.624c8.239,8.048,19.117,12.48,30.632,12.48h13.123c6.145,0,11.142,4.997,11.142,11.14   c0,8.19-6.662,14.854-14.853,14.854h-47.532c-3.74,0-6.774,3.033-6.774,6.773c0,3.741,3.034,6.774,6.774,6.774h47.532   c15.66,0,28.401-12.741,28.401-28.401c0-13.611-11.076-24.688-24.69-24.688h-13.123c-7.956,0-15.471-3.063-21.162-8.623   c-8.233-8.051-19.111-12.482-30.629-12.482h-52.635c-3.74,0-6.774,3.033-6.774,6.773v87.462h-30.134v-80.687H139.154z"
+                                fill="#fff"></path>
+
+                            <path
+                                d="M266.533,264.991c3.741,0,6.774-3.034,6.774-6.774v-5.484c9.539-1.76,16.792-10.123,16.792-20.163   c0-11.316-9.205-20.521-20.521-20.521h-1.047h-3.98h-1.047c-3.845,0-6.973-3.126-6.973-6.971c0-3.845,3.128-6.971,6.973-6.971   h15.839c3.741,0,6.774-3.034,6.774-6.774c0-3.74-3.033-6.774-6.774-6.774h-6.035v-4.326c0-3.741-3.033-6.774-6.774-6.774   c-3.74,0-6.773,3.034-6.773,6.774v4.685c-9.532,1.767-16.777,10.127-16.777,20.161c0,11.314,9.205,20.519,20.521,20.519h1.047h3.98   h1.047c3.845,0,6.973,3.128,6.973,6.973s-3.128,6.971-6.973,6.971h-15.839c-3.74,0-6.774,3.034-6.774,6.774   c0,3.741,3.034,6.774,6.774,6.774h6.021v5.128C259.76,261.957,262.793,264.991,266.533,264.991z"
+                                fill="#fff"></path>
+
+                            <path
+                                d="M438.971,425.09l-55.309-38.197c-3.078-2.125-7.299-1.355-9.424,1.724c-2.126,3.079-1.354,7.298,1.724,9.425l47.238,32.623   l-36.613,25.288V444.5c0-3.74-3.034-6.774-6.774-6.774H166.964v-14.123h212.849c3.74,0,6.774-3.034,6.774-6.774   s-3.034-6.773-6.774-6.773H160.189c-3.74,0-6.773,3.033-6.773,6.773V444.5c0,3.74,3.033,6.773,6.773,6.773h212.849v17.59   c0,2.518,1.397,4.829,3.627,5.999c0.989,0.519,2.069,0.775,3.147,0.775c1.352,0,2.697-0.405,3.85-1.2l55.309-38.199   c1.832-1.265,2.925-3.35,2.925-5.574C441.896,428.438,440.803,426.354,438.971,425.09z"
+                                fill="#fff"></path>
+
+                            <path
+                                d="M131.646,410.055h-30.093c-3.74,0-6.774,3.033-6.774,6.773V444.5c0,3.74,3.034,6.773,6.774,6.773h30.093   c3.74,0,6.773-3.033,6.773-6.773v-27.672C138.419,413.088,135.386,410.055,131.646,410.055z M124.871,437.726h-16.544v-14.123   h16.544V437.726z"
+                                fill="#fff"></path>
+
+                            <path
+                                d="M73.008,410.055c-3.74,0-6.774,3.033-6.774,6.773V444.5c0,3.74,3.034,6.773,6.774,6.773s6.774-3.033,6.774-6.773v-27.672   C79.782,413.088,76.748,410.055,73.008,410.055z"
+                                fill="#fff"></path>
+
+                            <path
+                                d="M73.029,86.91l55.309,38.199c1.176,0.811,2.516,1.2,3.844,1.2c2.151,0,4.267-1.021,5.58-2.924   c2.126-3.079,1.354-7.297-1.724-9.424L88.8,81.335l36.613-25.288V67.5c0,3.74,3.034,6.774,6.774,6.774h212.849v14.123H132.188   c-3.74,0-6.774,3.034-6.774,6.774c0,3.74,3.034,6.774,6.774,6.774h219.623c3.74,0,6.773-3.034,6.773-6.774V67.5   c0-3.741-3.033-6.774-6.773-6.774H138.962V43.136c0-2.518-1.397-4.829-3.627-6c-2.23-1.168-4.927-1.005-6.997,0.426L73.029,75.762   c-1.832,1.264-2.925,3.349-2.925,5.574S71.197,85.645,73.029,86.91z"
+                                fill="#fff"></path>
+
+                            <path
+                                d="M380.355,101.945h30.092c3.74,0,6.774-3.034,6.774-6.774V67.5c0-3.741-3.034-6.774-6.774-6.774h-30.092   c-3.741,0-6.775,3.034-6.775,6.774v27.671C373.58,98.912,376.614,101.945,380.355,101.945z M387.129,74.274h16.544v14.123h-16.544   V74.274z"
+                                fill="#fff"></path>
+
+                            <path
+                                d="M438.992,60.726c-3.74,0-6.774,3.034-6.774,6.774v27.671c0,3.74,3.034,6.774,6.774,6.774s6.774-3.034,6.774-6.774V67.5   C445.767,63.759,442.732,60.726,438.992,60.726z"
+                                fill="#fff"></path>
+                        </g>
+                    </svg>
+                    <h3>Funding</h3>
+                    <p class="service-desc">Fuel your growth with tailored funding solutions. Whether you need
+                        investors,
+                        grants, or government schemes, we connect you to the right financial resources.</p>
+                    <button onclick="location.href='/service/asset/funding.html'">Show More</button>
+                </div>
+                <div class="service-box">
+                    <svg fill="#000000" width="800px" height="800px" viewBox="0 0 256 256" id="Flat"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M208,80a8.00039,8.00039,0,0,1-8,8H167.85156c.08789,1.32373.14844,2.65454.14844,4a60.06812,60.06812,0,0,1-60,60H92.69238l72.68946,66.08008a8.0006,8.0006,0,0,1-10.76368,11.83984l-88-80A8.0004,8.0004,0,0,1,72,136h36a44.04978,44.04978,0,0,0,44-44c0-1.34912-.0708-2.68164-.18994-4H72a8,8,0,0,1,0-16h75.17188A44.03678,44.03678,0,0,0,108,48H72a8,8,0,0,1,0-16H200a8,8,0,0,1,0,16H148.73535a60.16006,60.16006,0,0,1,15.82422,24H200A8.00039,8.00039,0,0,1,208,80Z"
+                            fill="#fff"></path>
+                    </svg>
+                    <h3>Loan Services</h3>
+                    <p class="service-desc">Get quick and competitive business loans with expert support. We simplify
+                        applications, improve eligibility, and negotiate better terms for your financial needs.</p>
+                    <button onclick="location.href='/service/asset/loan.html'">Show More</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <!-- TESTIMONIAL SECTION -->
+        <section class="testimonial-section">
+            <div class="carousel" id="testimonial-carousel">
+                <div class="card">
+                    <div class="quote">“</div>
+                    <div class="text">The real-time synchronization and AI-powered organization have made our workflow
+                        more
+                        efficient than ever.</div>
+                    <div>
+                        <span class="author">Sarah Johnson</span>
+                        <span class="company">TechSavvv Solutions</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="quote">“</div>
+                    <div class="text">Working with this platform has transformed how we manage data and collaborate
+                        across
+                        departments.</div>
+                    <div>
+                        <span class="author">Rahul Mehta</span>
+                        <span class="company">InfoCore Pvt Ltd</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="quote">“</div>
+                    <div class="text">Exceptional service and support! The integration was seamless and intuitive.</div>
+                    <div>
+                        <span class="author">Ayesha Khan</span>
+                        <span class="company">BrightPath AI</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="quote">“</div>
+                    <div class="text">A revolutionary product that’s helped us scale operations quickly and efficiently.
+                    </div>
+                    <div>
+                        <span class="author">David Lee</span>
+                        <span class="company">EdgeWare Inc</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="contact-container">
+                <!-- Left: Contact Form -->
+                <div class="contact-form">
+                    <h2>Contact Us</h2>
+                    <input type="text" placeholder="Enter your name">
+                    <input type="text" placeholder="Enter your number">
+                    <input type="email" placeholder="Enter your Email">
+                    <textarea placeholder="Enter your message"></textarea>
+                    <button class="send-btn">
+                        Send For Contact <span class="arrow">
+                            <img src="/asset/white-arrow.svg" alt="arrow-icon">
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Right: Animated Effect -->
+                <div class="section-preview">
+                    <div class="animation-container">
+                        <div class="data-visualization">
+                            <div class="circle-pulse"></div>
+
+                            <!-- Connection lines -->
+                            <div class="connection-line" style="width: 40%; top: 30%; left: 5%; animation-delay: 0.3s;">
+                            </div>
+                            <div class="connection-line"
+                                style="width: 25%; top: 50%; left: 65%; animation-delay: 0.6s;">
+                            </div>
+                            <div class="connection-line"
+                                style="width: 30%; top: 70%; left: 15%; animation-delay: 0.9s;">
+                            </div>
+                            <div class="connection-line"
+                                style="width: 35%; top: 40%; left: 45%; animation-delay: 1.2s;">
+                            </div>
+
+                            <!-- Data nodes -->
+                            <div class="data-node" style="top: 30%; left: 5%; animation-delay: 0.2s;"></div>
+                            <div class="data-node" style="top: 30%; left: 45%; animation-delay: 0.4s;"></div>
+                            <div class="data-node" style="top: 50%; left: 65%; animation-delay: 0.6s;"></div>
+                            <div class="data-node" style="top: 50%; left: 90%; animation-delay: 0.8s;"></div>
+                            <div class="data-node" style="top: 70%; left: 15%; animation-delay: 1s;"></div>
+                            <div class="data-node" style="top: 70%; left: 45%; animation-delay: 1.2s;"></div>
+                            <div class="data-node" style="top: 40%; left: 45%; animation-delay: 1.4s;"></div>
+                            <div class="data-node" style="top: 40%; left: 80%; animation-delay: 1.6s;"></div>
+
+                            <!-- Message bubbles -->
+                            <div class="message-bubble" style="top: 20%; left: 10%; animation-delay: 0.5s;">How can I
+                                register my
+                                business?</div>
+                            <div class="message-bubble" style="top: 75%; left: 60%; animation-delay: 1.5s;">I need help
+                                with
+                                funding!
+                            </div>
+                            <div class="message-bubble" style="top: 40%; left: 70%; animation-delay: 2.5s;">GST
+                                registration
+                                services?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Left Section: Logo and Email Subscription -->
+                <div class="footer-left">
+                    <div class="logo">
+                        <img src="/asset/Logo/Abtik white.png" alt="">
+                    </div>
+                    <div class="email-subscribe">
+                        <input type="email" placeholder="email@AbtikServices">
+                        <button class="send-btn">
+                            <span class="arrow">
+                                <img src="/asset/white-arrow.svg" alt="arrow-icon">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Middle Section: Navigation Links -->
+                <div class="footer-links">
+                    <div class="contact-info">
+                        <h2 style="color: white;">Visit On</h2>
+                        <p>313, Patel Ave., S.G Highway, Thaltej, <br> Ahmedabad, Gujarat 380054</p>
+                        <h2 style="color: white;">For call</h2>
+                        <p>Monday-Saturday: 10am-7pm <br>
+                            +91 89281 38434</p>
+                        <h2 style="color: white;">If You Have Any Query</h2>
+                        <p>+91 98988 02140</p>
+                    </div>
+                    <div class="footer-column">
+                        <h3>services</h3>
+                        <a href="#">Certification</a>
+                        <a href="#">Loan services</a>
+                        <a href="#">Funding</a>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <a href="#">Our Story</a>
+                        <a href="/index.html">Home</a>
+                        <a href="/news/news.html">News</a>
+                        <a href="/about-us/about.html">About-us</a>
+                        <a href="/career/career.html">Career</a>
+                        <a href="/contact/contact.html">Contact Us</a>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="/asset/policies/cancellation.html">Cancellation & Refund Policy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-icons">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(8.53333,8.53333)">
+                            <path
+                                d="M15,3c-6.627,0 -12,5.373 -12,12c0,6.016 4.432,10.984 10.206,11.852v-8.672h-2.969v-3.154h2.969v-2.099c0,-3.475 1.693,-5 4.581,-5c1.383,0 2.115,0.103 2.461,0.149v2.753h-1.97c-1.226,0 -1.654,1.163 -1.654,2.473v1.724h3.593l-0.487,3.154h-3.106v8.697c5.857,-0.794 10.376,-5.802 10.376,-11.877c0,-6.627 -5.373,-12 -12,-12z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(8.53333,8.53333)">
+                            <path
+                                d="M15,2c-7.168,0 -13,5.832 -13,13c0,7.168 5.832,13 13,13c7.168,0 13,-5.832 13,-13c0,-7.168 -5.832,-13 -13,-13zM11.66602,6h6.66602c3.125,0 5.66797,2.54202 5.66797,5.66602v6.66602c0,3.125 -2.54202,5.66797 -5.66602,5.66797h-6.66602c-3.125,0 -5.66797,-2.54202 -5.66797,-5.66602v-6.66602c0,-3.125 2.54202,-5.66797 5.66602,-5.66797zM11.66602,8c-2.021,0 -3.66602,1.64597 -3.66602,3.66797v6.66602c0,2.021 1.64597,3.66602 3.66797,3.66602h6.66602c2.021,0 3.66602,-1.64597 3.66602,-3.66797v-6.66601c0,-2.021 -1.64597,-3.66602 -3.66797,-3.66602zM19.66797,9.66602c0.368,0 0.66602,0.29802 0.66602,0.66602c0,0.368 -0.29801,0.66797 -0.66602,0.66797c-0.368,0 -0.66797,-0.29997 -0.66797,-0.66797c0,-0.368 0.29997,-0.66602 0.66797,-0.66602zM15,10c2.757,0 5,2.243 5,5c0,2.757 -2.243,5 -5,5c-2.757,0 -5,-2.243 -5,-5c0,-2.757 2.243,-5 5,-5zM15,12c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(5.12,5.12)">
+                            <path
+                                d="M25,2c-12.682,0 -23,10.317 -23,23c0,12.683 10.318,23 23,23c12.682,0 23,-10.317 23,-23c0,-12.683 -10.318,-23 -23,-23zM18,35h-4v-15h4zM16,17c-1.105,0 -2,-0.895 -2,-2c0,-1.105 0.895,-2 2,-2c1.105,0 2,0.895 2,2c0,1.105 -0.895,2 -2,2zM37,35h-4v-5v-2.5c0,-1.925 -1.575,-3.5 -3.5,-3.5c-1.925,0 -3.5,1.575 -3.5,3.5v7.5h-4v-15h4v1.816c1.168,-1.122 2.752,-1.816 4.5,-1.816c3.59,0 6.5,2.91 6.5,6.5z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Bottom Section: Copyright and Social Links -->
+            <div class="footer-bottom">
+                <p class="right"> Made by Abtik Digital. <a href="">@Abtikdigital</a></p>
+                <p class="center">© 2024 AbtikServices. All Rights Reserved. <a href="#">@AbtikServices</a></p>
+            </div>
+        </footer>
+
+
+        <!-- Floating Action Button -->
+        <div class="fab-container">
+            <div class="fab-main">
+                <button class="fab-button">
+                    <span class="fab-icon">+</span>
+                </button>
+                <div class="fab-actions">
+                    <button class="fab-action" id="fab-chatbot">
+                        <i class="fa-solid fa-message"></i>
+                        <span class="tooltip">Chatbot</span>
+                    </button>
+                    <button class="fab-action" id="fab-whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="tooltip">WhatsApp</span>
+                    </button>
+                    <button class="fab-action" id="fab-call">
+                        <i class="fas fa-phone"></i>
+                        <span class="tooltip">Call Us</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chatbot Container -->
+            <div class="fab-chatbot">
+                <div class="chatbot-header">
+                    <h3>Abtik Assistant</h3>
+                    <button class="close-chatbot">×</button>
+                </div>
+                <div class="chatbot-messages">
+                    <div class="chatbot-message bot-message">
+                        <p>Hello! I'm Abtik Assistant. How can I help you today?</p>
+                        <div class="chat-suggestions">
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbot-input">
+                    <input type="text" placeholder="Type your message..." class="chatbot-text-input">
+                    <button class="chatbot-send-btn">Send</button>
+                </div>
+            </div>
+        </div>
+        <script src="/service/service.js"></script>
+</body>
+
+</html>

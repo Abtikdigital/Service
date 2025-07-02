@@ -1,0 +1,289 @@
+/* FAB Container */
+.fab-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+/* Main FAB Button */
+.fab-main {
+  position: relative;
+}
+
+.fab-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #007aff 0%, #004999 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.fab-icon {
+  font-size: 28px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+/* Action Buttons */
+.fab-actions {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.fab-action {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.fab-action i {
+  font-size: 20px;
+}
+
+.tooltip {
+  position: absolute;
+  right: 60px;
+  background: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Chatbot Styles */
+.fab-chatbot {
+  position: fixed;
+  bottom: 130px;
+  right: 30px;
+  width: 350px;
+  height: 450px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.chatbot-header {
+  background: linear-gradient(135deg, #007bff, #00bfff);
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-chatbot {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background: #f9f9f9;
+}
+
+.chatbot-message {
+  margin-bottom: 15px;
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 18px;
+  line-height: 1.4;
+}
+.chatbot-message p {
+  font-family: cursive;
+  font-size: medium;
+}
+
+.bot-message {
+  background: #e5e5ea;
+  color: #000;
+  align-self: flex-start;
+}
+
+.user-message {
+  background: #007bff;
+  color: white;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.chatbot-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #eee;
+  background: white;
+}
+
+.chatbot-text-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+}
+
+.chatbot-send-btn {
+  background: linear-gradient(180deg, #007aff 0%, #004999 100%);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Active States */
+.fab-container.active .fab-icon {
+  transform: rotate(45deg);
+}
+
+.fab-container.active .fab-actions {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.fab-action:hover .tooltip {
+  opacity: 1;
+}
+
+/* Specific action buttons */
+#fab-chatbot {
+  background: #007bff;
+  color: white;
+}
+
+#fab-whatsapp {
+  background: #25d366;
+  color: white;
+}
+
+#fab-call {
+  background: #ff5722;
+  color: white;
+}
+.chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.chat-suggestion {
+  background: #e5e5ea;
+  color: #000;
+  border: none;
+  border: 1px solid #8b8b8b;
+  border-radius: 15px;
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chat-suggestion:hover {
+  background: #d0d0d7;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .fab-container {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .fab-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .fab-icon {
+    font-size: 24px;
+  }
+
+  .fab-action {
+    width: 45px;
+    height: 45px;
+  }
+
+  .fab-chatbot {
+    width: 90vw;
+    right: 5vw;
+    bottom: 120px;
+    height: 60vh;
+  }
+}
+.social-icons a {
+  text-decoration: none;
+  margin: 0 10px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-icons i {
+  font-size: 20px;
+  color: white;
+  background-color: #333;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.social-icons .fa-facebook-f {
+  background-color: #4267b2;
+}
+.social-icons .fa-twitter {
+  background-color: #1da1f2;
+}
+.social-icons .fa-linkedin-in {
+  background-color: #0077b5;
+}
+.social-icons .fa-github {
+  background-color: #24292e;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}

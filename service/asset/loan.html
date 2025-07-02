@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funding Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Reset & General Styles */
+        body {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: white;
+            background: radial-gradient(circle, rgba(0, 30, 60, 0.8) 10%, rgba(0, 0, 0, 1) 60%);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        /* Header */
+        header {
+            background: black;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 0 auto;
+        }
+
+        nav ul li a {
+            color: #919191;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease, font-size 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #0056b3;
+            font-size: 1.1rem;
+        }
+
+        .active {
+            color: #0056b3;
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+
+        .hlogo img {
+            width: 80px;
+            height: auto;
+        }
+
+        /* Animated Button */
+        .animated-button {
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            color: white;
+            background: linear-gradient(180deg, #007aff 0%, #004999 100%);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        .animated-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 12px;
+            padding: 2px;
+            background: linear-gradient(180deg, #2f92ff 0%, #023b7b 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            z-index: -1;
+        }
+
+        .animated-button:hover {
+            background: linear-gradient(360deg, #007aff 0%, #004999 100%);
+            transform: scale(1.05);
+        }
+
+        .arrow-icon {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .animated-button:hover .arrow-icon {
+            transform: rotate(360deg);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active .line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: clamp(40px, 10vw, 60px) 20px;
+            text-align: center;
+            background: radial-gradient(circle, rgba(0, 30, 60, 0.8) 10%, rgba(0, 0, 0, 1) 60%);
+            background-attachment: fixed;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
+            color: #00bfff;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+        }
+
+        /* Funding Grid Section */
+        .funding-section {
+            padding: 60px 20px;
+            background: radial-gradient(circle, rgba(0, 30, 60, 0.8) 10%, rgba(0, 0, 0, 1) 60%);
+            background-attachment: fixed;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: #00bfff;
+        }
+
+        .funding-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 100vw;
+            margin: 0 auto;
+        }
+
+        .card {
+            margin: 5px;
+            background: linear-gradient(145deg, #0f172a, #1e293b);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 123, 255, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #00bfff;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+            color: #cbd5e0;
+            flex-grow: 1;
+            font-size: 0.9rem;
+        }
+
+        .card button {
+            align-self: flex-start;
+            padding: 8px 16px;
+            background: linear-gradient(180deg, #007aff 0%, #004999 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .card button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 90%;
+            width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+            color: #333;
+        }
+
+        .modal.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .modal h2 {
+            color: #007aff;
+            margin-bottom: 20px;
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
+        }
+
+        .modal ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 900;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+
+        .backdrop.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: black;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0 20px;
+            margin: auto;
+        }
+
+        .footer-left {
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 60px;
+            height: auto;
+        }
+
+        .email-subscribe {
+            display: flex;
+            background: white;
+            border-radius: 8px;
+            padding: 5px;
+        }
+
+        .email-subscribe input {
+            border: none;
+            padding: 8px;
+            font-size: 14px;
+            width: 100%;
+            outline: none;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 2;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .footer-links p {
+            font-size: 14px;
+            color: #bbb;
+            margin-bottom: 10px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .footer-column h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #bbb;
+            text-decoration: none;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .footer-column a:hover {
+            color: #007bff;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-bottom a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        .send-btn {
+            background: linear-gradient(180deg, #007aff 0%, #004999 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        /* FAB Container */
+        .fab-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .fab-button {
+            width: clamp(50px, 10vw, 60px);
+            height: clamp(50px, 10vw, 60px);
+            border-radius: 50%;
+            background: linear-gradient(180deg, #007aff 0%, #004999 100%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fab-icon {
+            font-size: clamp(20px, 5vw, 28px);
+            transition: transform 0.3s ease;
+        }
+
+        .fab-actions {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .fab-action {
+            width: clamp(40px, 8vw, 50px);
+            height: clamp(40px, 8vw, 50px);
+            border-radius: 50%;
+            background: white;
+            color: #333;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fab-action i {
+            font-size: clamp(16px, 4vw, 20px);
+        }
+
+        .tooltip {
+            right: 60px;
+            background: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: clamp(10px, 2vw, 12px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Chatbot Styles */
+        .fab-chatbot {
+            bottom: 100px;
+            right: 20px;
+            width: clamp(300px, 90vw, 350px);
+            height: clamp(400px, 60vh, 450px);
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, #007bff, #00bfff);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+
+        .chatbot-message {
+            margin-bottom: 15px;
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+        }
+
+        .bot-message {
+            background: #e5e5ea;
+            color: #000;
+        }
+
+        .user-message {
+            background: #007bff;
+            color: white;
+            margin-left: auto;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #eee;
+            background: white;
+        }
+
+        .chatbot-text-input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+        }
+
+        .chatbot-send-btn {
+            background: linear-gradient(180deg, #007aff 0%, #004999 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+        }
+
+        .fab-container.active .fab-icon {
+            transform: rotate(45deg);
+        }
+
+        .fab-container.active .fab-actions {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .fab-action:hover .tooltip {
+            opacity: 1;
+        }
+
+        #fab-chatbot {
+            background: #007bff;
+            color: white;
+        }
+
+        #fab-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        #fab-call {
+            background: #ff5722;
+            color: white;
+        }
+
+        .chat-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .chat-suggestion {
+            background: #e5e5ea;
+            border: 1px solid #8b8b8b;
+            border-radius: 15px;
+            padding: 8px 12px;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            cursor: pointer;
+        }
+
+        .chat-suggestion:hover {
+            background: #d0d0d7;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger .line {
+            width: 30px;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active .line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .funding-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+
+            .hamburger {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            nav {
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease-out;
+            }
+
+            nav.active {
+                max-height: 500px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+            }
+
+            nav ul li {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .hero {
+                padding: 40px 15px;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .funding-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal {
+                width: 95%;
+                padding: 15px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-left {
+                min-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+
+            .footer-column {
+                width: 45%;
+                margin: 10px 0;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .footer-bottom .right {
+                position: static;
+            }
+
+            .fab-chatbot {
+                bottom: 80px;
+                right: 5vw;
+                width: 90vw;
+                height: 60vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .card h3 {
+                font-size: 1.2rem;
+            }
+
+            .card p {
+                font-size: 0.9rem;
+            }
+
+            .footer-column {
+                width: 100%;
+            }
+
+            .fab-button {
+                width: 50px;
+                height: 50px;
+            }
+
+            .fab-action {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* Animations */
+        .card {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <a href="/index.html" class="hlogo"><img src="/asset/Logo/Abtik white.png" alt="Logo"></a>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/index.html" class="active">Home</a></li>
+                    <li><a href="/about-us/about.html">About us</a></li>
+                    <li><a href="/service/service.html">Services</a></li>
+                    <li><a href="/news/news.html">News</a></li>
+                    <li><a href="/career/career.html">Careers</a></li>
+                    <li><a href="/contact/contact.html">Contact</a></li>
+                    <!-- <li><a href="/network/network.html">Network</a></li> -->
+                </ul>
+                <div class="cta-button">
+                    <a href="/get-in-touch/get.html">
+                        <button class="animated-button">
+                            Get In Touch
+                            <span class="arrow-box">
+                                <img src="/asset/white-arrow.svg" alt="arrow-icon" class="arrow-icon">
+                            </span>
+                        </button>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Funding Solutions</h2>
+        <p>Find the perfect funding option for your business growth</p>
+    </section>
+
+    <!-- Funding Grid Section -->
+    <section class="funding-section">
+        <div class="funding-grid">
+            <div class="card" data-funding="Mudra Loan">
+                <h3>Mudra Loan - Fuel Your Business Growth</h3>
+                <p>The Pradhan Mantri MUDRA Yojana (PMMY) is a government-backed scheme providing financial support up to ₹10 lakhs to small businesses and entrepreneurs.</p>
+                <button class="see-more">See More</button>
+            </div>
+            <div class="card" data-funding="CGTMSE Loan">
+                <h3>CGTMSE Loan - Collateral-Free Funding for MSMEs</h3>
+                <p>The Credit Guarantee Fund Trust for Micro and Small Enterprises (CGTMSE) scheme enables MSMEs to secure business loans without collateral up to ₹2 crores, backed by a government guarantee.</p>
+                <button class="see-more">See More</button>
+            </div>
+            <div class="card" data-funding="NAIFF Loan">
+                <h3>NABARD NAIFF Loan - Boost Your Agri-Business Infrastructure</h3>
+                <p>The Nabard Agri Infra Financing Facility (NAIFF) provides up to ₹100 crores for agri-infrastructure projects.</p>
+                <button class="see-more">See More</button>
+            </div>
+            <div class="card" data-funding="PMEGP Loan">
+                <h3>PMEGP Loan - Subsidized Funding for Entrepreneurs & MSMEs</h3>
+                <p>The Prime Minister's Employment Generation Programme (PMEGP) offers:</p>
+                <button class="see-more">See More</button>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="backdrop"></div>
+    <div class="modal" id="fundingModal">
+        <button class="close-modal">×</button>
+        <div id="modalContent"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="logo">
+                    <img src="/asset/Logo/Abtik white.png" alt="">
+                </div>
+                <div class="email-subscribe">
+                    <input type="email" placeholder="email@AbtikServices">
+                    <button class="send-btn">
+                        <span class="arrow">
+                            <img src="/asset/white-arrow.svg" alt="arrow-icon">
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="contact-info">
+                    <h2 style="color: white;">Visit On</h2>
+                    <p>313, Patel Ave., S.G Highway, Thaltej, <br> Ahmedabad, Gujarat 380054</p>
+                    <h2 style="color: white;">For call</h2>
+                    <p>Monday-Saturday: 10am-7pm <br> +91 89281 38434</p>
+                    <h2 style="color: white;">If You Have Any Query</h2>
+                    <p>+91 98988 02140</p>
+                </div>
+                <div class="footer-column">
+                    <h3>services</h3>
+                    <a href="/service/asset/certification.html">Certification</a>
+                    <a href="/service/asset/loan.html">Loan services</a>
+                    <a href="/service/asset/funding.html">Funding</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="#">Our Story</a>
+                    <a href="/index.html">Home</a>
+                    <a href="/news/news.html">News</a>
+                    <a href="/about-us/about.html">About-us</a>
+                    <a href="/career/career.html">Career</a>
+                    <a href="/contact/contact.html">Contact Us</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <a href="#">Terms of Service</a>
+                    <a href="/asset/policies/privacy.html">Privacy Policy</a>
+                    <a href="/asset/policies/cancellation.html">Cancellation & Refund Policy</a>
+                </div>
+            </div>
+        </div>
+        <div class="social-icons">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(8.53333,8.53333)">
+                        <path
+                            d="M15,3c-6.627,0 -12,5.373 -12,12c0,6.016 4.432,10.984 10.206,11.852v-8.672h-2.969v-3.154h2.969v-2.099c0,-3.475 1.693,-5 4.581,-5c1.383,0 2.115,0.103 2.461,0.149v2.753h-1.97c-1.226,0 -1.654,1.163 -1.654,2.473v1.724h3.593l-0.487,3.154h-3.106v8.697c5.857,-0.794 10.376,-5.802 10.376,-11.877c0,-6.627 -5.373,-12 -12,-12z">
+                        </path>
+                    </g>
+                </g>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(8.53333,8.53333)">
+                        <path
+                            d="M15,2c-7.168,0 -13,5.832 -13,13c0,7.168 5.832,13 13,13c7.168,0 13,-5.832 13,-13c0,-7.168 -5.832,-13 -13,-13zM11.66602,6h6.66602c3.125,0 5.66797,2.54202 5.66797,5.66602v6.66602c0,3.125 -2.54202,5.66797 -5.66602,5.66797h-6.66602c-3.125,0 -5.66797,-2.54202 -5.66797,-5.66602v-6.66602c0,-3.125 2.54202,-5.66797 5.66602,-5.66797zM11.66602,8c-2.021,0 -3.66602,1.64597 -3.66602,3.66797v6.66602c0,2.021 1.64597,3.66602 3.66797,3.66602h6.66602c2.021,0 3.66602,-1.64597 3.66602,-3.66797v-6.66601c0,-2.021 -1.64597,-3.66602 -3.66797,-3.66602zM19.66797,9.66602c0.368,0 0.66602,0.29802 0.66602,0.66602c0,0.368 -0.29801,0.66797 -0.66602,0.66797c-0.368,0 -0.66797,-0.29997 -0.66797,-0.66797c0,-0.368 0.29997,-0.66602 0.66797,-0.66602zM15,10c2.757,0 5,2.243 5,5c0,2.757 -2.243,5 -5,5c-2.757,0 -5,-2.243 -5,-5c0,-2.757 2.243,-5 5,-5zM15,12c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z">
+                        </path>
+                    </g>
+                </g>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(5.12,5.12)">
+                        <path
+                            d="M25,2c-12.682,0 -23,10.317 -23,23c0,12.683 10.318,23 23,23c12.682,0 23,-10.317 23,-23c0,-12.683 -10.318,-23 -23,-23zM18,35h-4v-15h4zM16,17c-1.105,0 -2,-0.895 -2,-2c0,-1.105 0.895,-2 2,-2c1.105,0 2,0.895 2,2c0,1.105 -0.895,2 -2,2zM37,35h-4v-5v-2.5c0,-1.925 -1.575,-3.5 -3.5,-3.5c-1.925,0 -3.5,1.575 -3.5,3.5v7.5h-4v-15h4v1.816c1.168,-1.122 2.752,-1.816 4.5,-1.816c3.59,0 6.5,2.91 6.5,6.5z">
+                        </path>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <div class="footer-bottom">
+            <p class="right"> Made by Abtik Digital. <a href="">@Abtikdigital</a></p>
+            <p class="center">© 2024 AbtikServices. All Rights Reserved. <a href="#">@AbtikServices</a></p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fab-container">
+        <div class="fab-main">
+            <button class="fab-button">
+                <span class="fab-icon">+</span>
+            </button>
+            <div class="fab-actions">
+                <button class="fab-action" id="fab-chatbot">
+                    <i class="fa-solid fa-message"></i>
+                    <span class="tooltip">Chatbot</span>
+                </button>
+                <button class="fab-action" id="fab-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="tooltip">WhatsApp</span>
+                </button>
+                <button class="fab-action" id="fab-call">
+                    <i class="fas fa-phone"></i>
+                    <span class="tooltip">Call Us</span>
+                </button>
+            </div>
+        </div>
+        <div class="fab-chatbot">
+            <div class="chatbot-header">
+                <h3>Abtik Assistant</h3>
+                <button class="close-chatbot">×</button>
+            </div>
+            <div class="chatbot-messages">
+                <div class="chatbot-message bot-message">
+                    <p>Hello! I'm Abtik Assistant. How can I help you today?</p>
+                    <div class="chat-suggestions"></div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" placeholder="Type your message..." class="chatbot-text-input">
+                <button class="chatbot-send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        
+        // Hamburger Menu
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Close nav when clicking a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+
+        // Modal functionality
+        const cards = document.querySelectorAll('.card');
+        const modal = document.getElementById('fundingModal');
+        const backdrop = document.querySelector('.backdrop');
+        const modalContent = document.getElementById('modalContent');
+        const closeModal = document.querySelector('.close-modal');
+
+        const fundingDetails = {
+            "Mudra Loan": `
+                <h2>Mudra Loan - Fuel Your Business Growth</h2>
+                <p>The Pradhan Mantri MUDRA Yojana (PMMY) is a government-backed scheme providing financial support up to ₹10 lakhs to small businesses and entrepreneurs.</p>
+                <h3>Benefits:</h3>
+                <ul>
+                    <li>Collateral-free– No asset mortgage needed</li>
+                    <li>Women entrepreneurs get 0.25% interest subsidy</li>
+                    <li>Covers working capital, machinery, shop setup, etc.</li>
+                </ul>
+                <h3>Eligibility:</h3>
+                <ul>
+                    <li>Indian citizen aged 18+</li>
+                    <li>Business plan for new enterprises</li>
+                    <li>Existing businesses: 1+ year operations (for Kishor/Tarun)</li>
+                    
+                </ul>
+                <button class="contact-btn">Apply Now</button>
+            `,
+            "CGTMSE Loan": `
+                <h2>CGTMSE Loan - Collateral-Free Funding for MSMEs</h2>
+                <p>The Credit Guarantee Fund Trust for Micro and Small Enterprises (CGTMSE) scheme enables MSMEs to secure business loans without collateral up to ₹5 crores, backed by a government guarantee.</p>
+                <h3>Benefits:</h3>
+                <ul>
+                    <li>Zero Collateral Required - Government covers 75-85% of loan amount</li>
+                    <li> Loan Range - From ₹10 lakhs to ₹2 crores</li>
+                    <li>Flexible Usage - Working capital, equipment purchase, business expansion</li>
+                    <li>Women Entrepreneurs - Additional 0.25% interest subsidy</li>
+                    <li>Competitive Rates - As low as 8.5% p.a. (varies by lender)</li>
+                </ul>
+                <h3>Eligibility:</h3>
+                <ul>
+                    <li>Business Type: Manufacturing or service MSME (Udyam registered preferred)</li>
+                    <li>Operational History: Minimum 2 years for loans above ₹10 lakhs</li>
+                    <li>Credit Score: 650+ (varies by bank)</li>
+                    <li>Turnover: Should justify loan amount</li>
+                </ul>
+                <button class="contact-btn">Learn More</button>
+            `,
+            "NAIFF Loan": `
+                <h2>NABARD NAIFF Loan - Boost Your Agri-Business Infrastructure</h2>
+                <p>The Nabard Agri Infra Financing Facility (NAIFF) provides up to ₹100 crores for agri-infrastructure projects with:
+                    <ul>
+                        <li>3% interest subvention (effective rate ~7-9%)</li>
+                        <li>Long repayment up to 10 years</li>
+                        <li>2-year moratorium available</li>
+                    </ul>
+                </p>
+                <h3>Benefits:</h3>
+                <ul>
+                    <li>Collateral-free up to ₹1.6 Cr (CGTMSE cover)</li>
+                    <li>Additional 25% subsidy for FPOs under Agri-Market Infrastructure Fund</li>
+                    <li>90% project financing available</li>
+                </ul>
+                <h3>Eligibility:</h3>
+                <ul>
+                    <li>Entities: Agri-entrepreneurs/FPOs/Cooperatives/Startups</li>
+                    <li>Experience: 2+ years in agri-sector (waived for tech projects)</li>
+                    <li>Land: Owned/leased (min. 5 years remaining)</li>
+                </ul>
+                <button class="contact-btn">Apply Now</button>
+            `,
+            "PMEGP Loan": `
+                <h2>PMEGP Loan - Subsidized Funding for Entrepreneurs & MSMEs</h2>
+                <p>The Prime Minister's Employment Generation Programme (PMEGP) offers:
+                    <ul>
+                        <li>15-35% subsidy on project cost</li>
+                        <li>Bank loans for remaining amount</li>
+                        <li>Maximum project cost: ₹50 lakhs (manufacturing) / ₹20 lakhs (services)</li>
+                    
+                    </ul>
+                </p>
+                <h3>Benefits:</h3>
+                <ul>
+                    <li>Higher Subsidy Rates:
+                        <ul>
+                            <li>General Category: 15% (Urban), 25% (Rural)</li>
+                            <li>Special Categories (SC/ST/Women/PH/Minorities): 25% (Urban), 35% (Rural)</li>
+                        </ul>
+                    </li>
+                    <li>Collateral-Free (For loans up to ₹10 lakhs)</li>
+                    <li>Low Interest Rates (~9-12% p.a.)</li>
+                    <li>Repayment Period: 3-7 years (including moratorium)</li>
+                </ul>
+                <h3>Eligibility:</h3>
+                <ul>
+                    <li>Age: 18+ years</li>
+                    <li>No existing PMEGP/KVIC subsidy</li>
+                    <li>Educational Qualification:
+                        <ul>
+                            <li>8th pass for projects up to ₹10 lakhs</li>
+                            <li>Above 8th standard for higher amounts</li>
+                        </ul>
+                    </li>
+                </ul>
+                <button class="contact-btn">Get Started</button>
+            `,
+            
+        };
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const fundingType = card.getAttribute('data-funding');
+                modalContent.innerHTML = fundingDetails[fundingType];
+                modal.classList.add('show');
+                backdrop.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeModalFunc() {
+            modal.classList.remove('show');
+            backdrop.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        closeModal.addEventListener('click', closeModalFunc);
+        backdrop.addEventListener('click', closeModalFunc);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModalFunc();
+        });
+
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('contact-btn')) {
+                alert('Thank you for your interest! Our team will contact you shortly.');
+                closeModalFunc();
+            }
+        });
+
+        // FAB and Chatbot
+        const fabContainer = document.querySelector('.fab-container');
+        const fabButton = document.querySelector('.fab-button');
+        const fabChatbot = document.querySelector('.fab-chatbot');
+        const fabChatbotBtn = document.querySelector('#fab-chatbot');
+        const closeChatbot = document.querySelector('.close-chatbot');
+
+        fabButton.addEventListener('click', () => {
+            fabContainer.classList.toggle('active');
+        });
+
+        fabChatbotBtn.addEventListener('click', () => {
+            fabChatbot.style.display = 'flex';
+            fabContainer.classList.remove('active');
+        });
+
+        closeChatbot.addEventListener('click', () => {
+            fabChatbot.style.display = 'none';
+        });
+
+        // Animate cards on scroll
+        const animateOnScroll = () => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (cardTop < windowHeight - 100) {
+                    card.style.animationPlayState = 'running';
+                }
+            });
+        };
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.animationPlayState = 'paused';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+
+</html>

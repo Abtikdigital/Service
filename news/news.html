@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Page</title>
+    <link rel="stylesheet" href="/news/news.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="../asset/Logo/Abtik white.png" alt="Loading..." style="width: 100px; height: auto;">
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" style="display: none;">
+        <!-- HEADER -->
+        <header>
+            <div class="container">
+                <a href="/index.html" class="hlogo"><img src="/asset/Logo/Abtik white.png" alt="Logo"></a>
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about-us/about.html">About us</a></li>
+                        <li><a href="/service/service.html">Services</a></li>
+                        <li><a href="/news/news.html" class="active">News</a></li>
+                        <li><a href="/career/career.html">Careers</a></li>
+                        <li><a href="/contact/contact.html">Contact</a></li>
+                        <!-- <li><a href="/network/network.html">Network</a></li> -->
+                    </ul>
+                    <div class="cta-button">
+                        <a href="/get-in-touch/get.html">
+                            <button class="animated-button">
+                                Get In Touch
+                                <span class="arrow-box">
+                                    <img src="/asset/white-arrow.svg" alt="arrow-icon" class="arrow-icon">
+                                </span>
+                            </button>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-left">
+                <h2>Business Insights & Updates</h2>
+                <p>Stay informed with the latest business trends, government schemes, and success stories. <br> Empower
+                    your
+                    business with knowledge.</p>
+            </div>
+            <div class="hero-right">
+                <div class="news-hub">
+                    <div class="hub-center">
+                        <div class="hub-icon main-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                    </div>
+                    <div class="hub-item item-1">
+                        <div class="hub-icon"><i class="fas fa-business-time"></i></div><span>Business Growth</span>
+                    </div>
+                    <div class="hub-item item-2">
+                        <div class="hub-icon"><i class="fas fa-money-check-alt"></i></div><span>Funding</span>
+                    </div>
+                    <div class="hub-item item-3">
+                        <div class="hub-icon"><i class="fas fa-hand-holding-usd"></i></div><span>Loans</span>
+                    </div>
+                    <div class="hub-item item-4">
+                        <div class="hub-icon"><i class="fas fa-certificate"></i></div><span>Certifications</span>
+                    </div>
+                    <div class="hub-item item-5">
+                        <div class="hub-icon"><i class="fas fa-chart-line"></i></div><span>Market Trends</span>
+                    </div>
+                    <div class="hub-item item-6">
+                        <div class="hub-icon"><i class="fas fa-landmark"></i></div><span>Government <br> Policies</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOGO SLIDER -->
+        <section class="logo-slider">
+            <div class="slider-wrapper">
+                <div class="logos">
+                    <img src="/asset/Logo/Artboard 1.png" alt="Logo 1">
+                    <img src="/asset/Logo/Artboard 2.png" alt="Logo 2">
+                    <img src="/asset/Logo/Artboard 3.png" alt="Logo 3">
+                    <img src="/asset/Logo/Artboard 4.png" alt="Logo 4">
+                    <img src="/asset/Logo/Artboard 5.png" alt="Logo 5">
+                    <img src="/asset/Logo/Artboard 6.png" alt="Logo 6">
+                    <img src="/asset/Logo/Artboard 7.png" alt="Logo 7">
+                    <img src="/asset/Logo/Artboard 8.png" alt="Logo 8">
+                    <img src="/asset/Logo/Artboard 9.png" alt="Logo 9">
+                    <img src="/asset/Logo/Artboard 10.png" alt="Logo 10">
+                    <img src="/asset/Logo/Artboard 11.png" alt="Logo 11">
+                </div>
+            </div>
+        </section>
+
+        <!-- LATEST NEWS -->
+        <section class="latest-news">
+            <h1>Latest Business News</h1>
+        </section>
+
+        <!-- SEARCH BAR -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search business articles..." />
+            <button id="searchBtn" class="search-btn"><i class="fas fa-search"></i> Search</button>
+        </div>
+
+        <!-- NEWS GRID -->
+        <div class="news-grid" id="newsGrid">
+            <!-- Cards populated by JS -->
+        </div>
+
+        <!-- LOAD MORE / SEE LESS -->
+        <div class="load-more-wrapper">
+            <button class="load-more" id="loadMoreBtn">Load More</button>
+            <button class="see-less" id="seeLessBtn" style="display: none;">See Less</button>
+        </div>
+
+        <!-- BLOG CATEGORY SECTION -->
+        <section class="blog-category-section">
+            <h2>Business Blog</h2>
+            <div class="search-bar">
+                <input type="text" id="blogSearchInput" placeholder="Search blog posts..." />
+                <button id="blogSearchBtn" class="search-btn"><i class="fas fa-search"></i> Search</button>
+            </div>
+            <div class="blog-category-filters">
+                <button class="active">All</button>
+                <button>Loan</button>
+                <button>MSME</button>
+                <button>Tax</button>
+            </div>
+            <div id="blog-container" class="blog-grid">
+                <!-- Blog posts populated by JS -->
+            </div>
+            <div class="load-more-wrapper">
+                <button class="load-more" id="blogLoadMoreBtn">Load More</button>
+                <button class="see-less" id="blogSeeLessBtn" style="display: none;">See Less</button>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="contact-container">
+                <!-- Left: Contact Form -->
+                <div class="contact-form">
+                    <h2>Contact Us</h2>
+                    <input type="text" placeholder="Enter your name">
+                    <input type="text" placeholder="Enter your number">
+                    <input type="email" placeholder="Enter your Email">
+                    <textarea placeholder="Enter your message"></textarea>
+                    <button class="send-btn">
+                        Send For Contact <span class="arrow">
+                            <img src="/asset/white-arrow.svg" alt="arrow-icon">
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Right: Animated Effect -->
+                <div class="section-preview">
+                    <div class="animation-container">
+                        <div class="data-visualization">
+                            <div class="circle-pulse"></div>
+
+                            <!-- Connection lines -->
+                            <div class="connection-line" style="width: 40%; top: 30%; left: 5%; animation-delay: 0.3s;">
+                            </div>
+                            <div class="connection-line"
+                                style="width: 25%; top: 50%; left: 65%; animation-delay: 0.6s;">
+                            </div>
+                            <div class="connection-line"
+                                style="width: 30%; top: 70%; left: 15%; animation-delay: 0.9s;">
+                            </div>
+                            <div class="connection-line"
+                                style="width: 35%; top: 40%; left: 45%; animation-delay: 1.2s;">
+                            </div>
+
+                            <!-- Data nodes -->
+                            <div class="data-node" style="top: 30%; left: 5%; animation-delay: 0.2s;"></div>
+                            <div class="data-node" style="top: 30%; left: 45%; animation-delay: 0.4s;"></div>
+                            <div class="data-node" style="top: 50%; left: 65%; animation-delay: 0.6s;"></div>
+                            <div class="data-node" style="top: 50%; left: 90%; animation-delay: 0.8s;"></div>
+                            <div class="data-node" style="top: 70%; left: 15%; animation-delay: 1s;"></div>
+                            <div class="data-node" style="top: 70%; left: 45%; animation-delay: 1.2s;"></div>
+                            <div class="data-node" style="top: 40%; left: 45%; animation-delay: 1.4s;"></div>
+                            <div class="data-node" style="top: 40%; left: 80%; animation-delay: 1.6s;"></div>
+
+                            <!-- Message bubbles -->
+                            <div class="message-bubble" style="top: 20%; left: 10%; animation-delay: 0.5s;">How can I
+                                register my
+                                business?</div>
+                            <div class="message-bubble" style="top: 75%; left: 60%; animation-delay: 1.5s;">I need help
+                                with
+                                funding!
+                            </div>
+                            <div class="message-bubble" style="top: 40%; left: 70%; animation-delay: 2.5s;">GST
+                                registration
+                                services?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Left Section: Logo and Email Subscription -->
+                <div class="footer-left">
+                    <div class="logo">
+                        <img src="/asset/Logo/Abtik white.png" alt="">
+                    </div>
+                    <div class="email-subscribe">
+                        <input type="email" placeholder="email@AbtikServices">
+                        <button class="send-btn">
+                            <span class="arrow">
+                                <img src="/asset/white-arrow.svg" alt="arrow-icon">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Middle Section: Navigation Links -->
+                <div class="footer-links">
+                    <div class="contact-info">
+                        <h2 style="color: white;">Visit On</h2>
+                        <p>313, Patel Ave., S.G Highway, Thaltej, <br> Ahmedabad, Gujarat 380054</p>
+                        <h2 style="color: white;">For call</h2>
+                        <p>Monday-Saturday: 10am-7pm <br>
+                            +91 89281 38434</p>
+                        <h2 style="color: white;">If You Have Any Query</h2>
+                        <p>+91 98988 02140</p>
+                    </div>
+                    <div class="footer-column">
+                        <h3>services</h3>
+                        <a href="#">Certification</a>
+                        <a href="#">Loan services</a>
+                        <a href="#">Funding</a>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <a href="#">Our Story</a>
+                        <a href="/index.html">Home</a>
+                        <a href="/news/news.html">News</a>
+                        <a href="/about-us/about.html">About-us</a>
+                        <a href="/career/career.html">Career</a>
+                        <a href="/contact/contact.html">Contact Us</a>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="/asset/policies/cancellation.html">Cancellation & Refund Policy</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-icons">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(8.53333,8.53333)">
+                            <path
+                                d="M15,3c-6.627,0 -12,5.373 -12,12c0,6.016 4.432,10.984 10.206,11.852v-8.672h-2.969v-3.154h2.969v-2.099c0,-3.475 1.693,-5 4.581,-5c1.383,0 2.115,0.103 2.461,0.149v2.753h-1.97c-1.226,0 -1.654,1.163 -1.654,2.473v1.724h3.593l-0.487,3.154h-3.106v8.697c5.857,-0.794 10.376,-5.802 10.376,-11.877c0,-6.627 -5.373,-12 -12,-12z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(8.53333,8.53333)">
+                            <path
+                                d="M15,2c-7.168,0 -13,5.832 -13,13c0,7.168 5.832,13 13,13c7.168,0 13,-5.832 13,-13c0,-7.168 -5.832,-13 -13,-13zM11.66602,6h6.66602c3.125,0 5.66797,2.54202 5.66797,5.66602v6.66602c0,3.125 -2.54202,5.66797 -5.66602,5.66797h-6.66602c-3.125,0 -5.66797,-2.54202 -5.66797,-5.66602v-6.66602c0,-3.125 2.54202,-5.66797 5.66602,-5.66797zM11.66602,8c-2.021,0 -3.66602,1.64597 -3.66602,3.66797v6.66602c0,2.021 1.64597,3.66602 3.66797,3.66602h6.66602c2.021,0 3.66602,-1.64597 3.66602,-3.66797v-6.66601c0,-2.021 -1.64597,-3.66602 -3.66797,-3.66602zM19.66797,9.66602c0.368,0 0.66602,0.29802 0.66602,0.66602c0,0.368 -0.29801,0.66797 -0.66602,0.66797c-0.368,0 -0.66797,-0.29997 -0.66797,-0.66797c0,-0.368 0.29997,-0.66602 0.66797,-0.66602zM15,10c2.757,0 5,2.243 5,5c0,2.757 -2.243,5 -5,5c-2.757,0 -5,-2.243 -5,-5c0,-2.757 2.243,-5 5,-5zM15,12c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(5.12,5.12)">
+                            <path
+                                d="M25,2c-12.682,0 -23,10.317 -23,23c0,12.683 10.318,23 23,23c12.682,0 23,-10.317 23,-23c0,-12.683 -10.318,-23 -23,-23zM18,35h-4v-15h4zM16,17c-1.105,0 -2,-0.895 -2,-2c0,-1.105 0.895,-2 2,-2c1.105,0 2,0.895 2,2c0,1.105 -0.895,2 -2,2zM37,35h-4v-5v-2.5c0,-1.925 -1.575,-3.5 -3.5,-3.5c-1.925,0 -3.5,1.575 -3.5,3.5v7.5h-4v-15h4v1.816c1.168,-1.122 2.752,-1.816 4.5,-1.816c3.59,0 6.5,2.91 6.5,6.5z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Bottom Section: Copyright and Social Links -->
+            <div class="footer-bottom">
+                <p class="right"> Made by Abtik Digital. <a href="">@Abtikdigital</a></p>
+                <p class="center">© 2024 AbtikServices. All Rights Reserved. <a href="#">@AbtikServices</a></p>
+            </div>
+        </footer>
+
+        <!-- FAB -->
+        <div class="fab-container">
+            <div class="fab-main">
+                <button class="fab-button"><span class="fab-icon">+</span></button>
+                <div class="fab-actions">
+                    <button class="fab-action" id="fab-chatbot">
+                        <i class="fa-solid fa-message"></i><span class="tooltip">Chatbot</span>
+                    </button>
+                    <button class="fab-action" id="fab-whatsapp">
+                        <i class="fab fa-whatsapp"></i><span class="tooltip">WhatsApp</span>
+                    </button>
+                    <button class="fab-action" id="fab-call">
+                        <i class="fas fa-phone"></i><span class="tooltip">Call Us</span>
+                    </button>
+                </div>
+            </div>
+            <div class="fab-chatbot">
+                <div class="chatbot-header">
+                    <h3>Abtik Assistant</h3>
+                    <button class="close-chatbot">×</button>
+                </div>
+                <div class="chatbot-messages">
+                    <div class="chatbot-message bot-message">
+                        <p>Hello! I'm Abtik Assistant. How can I help you today?</p>
+                        <div class="chat-suggestions">
+                            <button class="chat-suggestion">What services do you offer?</button>
+                            <button class="chat-suggestion">How can I contact support?</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbot-input">
+                    <input type="text" placeholder="Type your message..." class="chatbot-text-input">
+                    <button class="chatbot-send-btn">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="/news/news.js"></script>
+</body>
+
+</html>

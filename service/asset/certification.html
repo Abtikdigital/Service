@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & General Styles */
+        body {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: white;
+            background: radial-gradient(circle, rgba(0, 30, 60, 0.8) 10%, rgba(0, 0, 0, 1) 60%);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        p,
+        h1,
+        h2,
+        h3 {
+            font-family: DM Sans, sans-serif !important;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        /* Header */
+        header {
+            background: black;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 0 auto;
+        }
+
+        nav ul li a {
+            color: #919191;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease, font-size 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #0056b3;
+            font-size: 1.1rem;
+        }
+
+        .active {
+            color: #0056b3;
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+
+        .hlogo img {
+            width: 80px;
+            height: auto;
+        }
+
+        /* Animated Button */
+        .animated-button {
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            color: white;
+            background: linear-gradient(180deg, #007aff 0%, #004999 100%);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        .animated-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 12px;
+            padding: 2px;
+            background: linear-gradient(180deg, #2f92ff 0%, #023b7b 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            z-index: -1;
+        }
+
+        .animated-button:hover {
+            background: linear-gradient(360deg, #007aff 0%, #004999 100%);
+            transform: scale(1.05);
+        }
+
+        .arrow-icon {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .animated-button:hover .arrow-icon {
+            transform: rotate(360deg);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active .line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active .line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 10px;
+            text-align: center;
+            background: radial-gradient(circle, rgba(0, 30, 60, 0.8) 10%, rgba(0, 0, 0, 1) 60%);
+            background-attachment: fixed;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: #00bfff;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #cbd5e0;
+        }
+
+        .hero img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+            margin-top: 30px;
+        }
+
+        /* Loan Grid Section */
+        .loan-section {
+            padding: 60px 20px;
+            background: radial-gradient(circle, rgba(0, 30, 60, 0.8) 10%, rgba(0, 0, 0, 1) 60%);
+            background-attachment: fixed;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: #00bfff;
+        }
+
+        .loan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 100vw;
+            margin: 0 auto;
+        }
+
+        .card {
+            margin: 5px;
+            background: linear-gradient(145deg, #0f172a, #1e293b);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 123, 255, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #00bfff;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+            color: #cbd5e0;
+            flex-grow: 1;
+            font-size: 0.9rem;
+        }
+
+        .card button {
+            align-self: flex-start;
+            padding: 8px 16px;
+            background: linear-gradient(180deg, #007aff 0%, #004999 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .card button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 90%;
+            width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+            color: #333;
+        }
+
+        .modal.show {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .modal h2 {
+            color: #007aff;
+            margin-bottom: 20px;
+        }
+
+        .modal ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .modal li {
+            margin-bottom: 10px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 900;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+
+        .backdrop.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: black;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0 20px;
+            margin: auto;
+        }
+
+        .footer-left {
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 60px;
+            height: auto;
+        }
+
+        .email-subscribe {
+            display: flex;
+            background: white;
+            border-radius: 8px;
+            padding: 5px;
+        }
+
+        .email-subscribe input {
+            border: none;
+            padding: 8px;
+            font-size: 14px;
+            width: 100%;
+            outline: none;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 2;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .footer-links p {
+            font-size: 14px;
+            color: #bbb;
+            margin-bottom: 10px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .footer-column h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #bbb;
+            text-decoration: none;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .footer-column a:hover {
+            color: #007bff;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-bottom a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        .send-btn {
+            background: linear-gradient(180deg, #007aff 0%, #004999 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        /* FAB Container */
+        .fab-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        /* Main FAB Button */
+        .fab-main {
+            position: relative;
+        }
+
+        .fab-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #007aff 0%, #004999 100%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .fab-icon {
+            font-size: 24px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        /* Action Buttons */
+        .fab-actions {
+            position: absolute;
+            bottom: 60px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .fab-action {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            color: #333;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .fab-action i {
+            font-size: 18px;
+        }
+
+        .tooltip {
+            position: absolute;
+            right: 50px;
+            background: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        /* FAB Container */
+        .fab-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .fab-main {
+            position: relative;
+        }
+
+        .fab-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #007aff 0%, #004999 100%);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .fab-icon {
+            font-size: 28px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .fab-actions {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .fab-action {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            color: #333;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .fab-action i {
+            font-size: 20px;
+        }
+
+        .tooltip {
+            position: absolute;
+            right: 60px;
+            background: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Chatbot Styles */
+        .fab-chatbot {
+            position: fixed;
+            bottom: 130px;
+            right: 30px;
+            width: 350px;
+            height: 450px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, #007bff, #00bfff);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-chatbot {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+
+        .chatbot-message {
+            margin-bottom: 15px;
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            line-height: 1.4;
+        }
+
+        .chatbot-message p {
+            font-family: cursive;
+            font-size: medium;
+        }
+
+        .bot-message {
+            background: #e5e5ea;
+            color: #000;
+            align-self: flex-start;
+        }
+
+        .user-message {
+            background: #007bff;
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #eee;
+            background: white;
+        }
+
+        .chatbot-text-input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .chatbot-send-btn {
+            background: linear-gradient(180deg, #007aff 0%, #004999 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        /* Active States */
+        .fab-container.active .fab-icon {
+            transform: rotate(45deg);
+        }
+
+        .fab-container.active .fab-actions {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .fab-action:hover .tooltip {
+            opacity: 1;
+        }
+
+        #fab-chatbot {
+            background: #007bff;
+            color: white;
+        }
+
+        #fab-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        #fab-call {
+            background: #ff5722;
+            color: white;
+        }
+
+        .chat-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .chat-suggestion {
+            background: #e5e5ea;
+            color: #000;
+            border: 1px solid #8b8b8b;
+            border-radius: 15px;
+            padding: 8px 12px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .chat-suggestion:hover {
+            background: #d0d0d7;
+        }
+
+        /* Animations */
+        .card {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+
+            /* Header */
+            .container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+            }
+
+            .hamburger {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                cursor: pointer;
+                z-index: 1000;
+            }
+
+            .hamburger .line {
+                width: 30px;
+                height: 3px;
+                background: white;
+                margin: 5px 0;
+                transition: all 0.3s ease;
+            }
+
+            .hamburger.active .line:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active .line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .line:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            nav {
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease-out;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: black;
+                z-index: 999;
+            }
+
+            nav.active {
+                max-height: 500px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+            }
+
+            nav ul li {
+                width: 100%;
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            nav ul li a {
+                font-size: 1.2rem;
+                padding: 10px;
+                display: block;
+            }
+
+            .animated-button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            /* Hero Section */
+            .hero {
+                padding: 40px 15px;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero img {
+                max-width: 300px;
+            }
+
+            /* Loan Grid */
+            .loan-section {
+                padding: 40px 15px;
+            }
+
+            .loan-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .card h3 {
+                font-size: 1.1rem;
+            }
+
+            .card p {
+                font-size: 0.85rem;
+            }
+
+            .card button {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+
+            /* Modal */
+            .modal {
+                width: 90%;
+                padding: 20px;
+                max-height: 70vh;
+            }
+
+            .modal h2 {
+                font-size: 1.5rem;
+            }
+
+            .modal ul {
+                padding-left: 15px;
+            }
+
+            .modal li {
+                font-size: 0.9rem;
+            }
+
+            /* Footer */
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-left {
+                min-width: 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-column {
+                width: 100%;
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .footer-column a {
+                font-size: 0.9rem;
+            }
+
+            .contact-info {
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .footer-bottom .right {
+                position: static;
+                margin-top: 10px;
+            }
+
+            .social-icons {
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            /* FAB */
+            .fab-container {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .fab-button {
+                width: 50px;
+                height: 50px;
+            }
+
+            .fab-icon {
+                font-size: 24px;
+            }
+
+            .fab-action {
+                width: 45px;
+                height: 45px;
+            }
+
+            .fab-chatbot {
+                width: 90vw;
+                right: 5vw;
+                bottom: 90px;
+                height: 60vh;
+            }
+
+            .chatbot-messages {
+                padding: 10px;
+            }
+
+            .chatbot-message {
+                font-size: 0.9rem;
+            }
+
+            .chatbot-text-input {
+                font-size: 0.9rem;
+            }
+
+            .chatbot-send-btn {
+                font-size: 0.9rem;
+                padding: 8px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container a {
+                max-width: 120px;
+            }
+
+            .container img {
+                max-width: 120px;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .hero img {
+                max-width: 250px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .card h3 {
+                font-size: 1rem;
+            }
+
+            .card p {
+                font-size: 0.8rem;
+            }
+
+            .modal h2 {
+                font-size: 1.3rem;
+            }
+
+            .modal li {
+                font-size: 0.85rem;
+            }
+
+            .footer-column h3 {
+                font-size: 16px;
+            }
+
+            .footer-bottom p {
+                font-size: 12px;
+            }
+
+            .social-icons svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <a href="/index.html" class="hlogo"><img src="/asset/Logo/Abtik white.png" alt="Logo"></a>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/index.html" class="active">Home</a></li>
+                    <li><a href="/about-us/about.html">About us</a></li>
+                    <li><a href="/service/service.html">Services</a></li>
+                    <li><a href="/news/news.html">News</a></li>
+                    <li><a href="/career/career.html">Careers</a></li>
+                    <li><a href="/contact/contact.html">Contact</a></li>
+                    <!-- <li><a href="/network/network.html">Network</a></li> -->
+                </ul>
+                <div class="cta-button">
+                    <a href="/get-in-touch/get.html">
+                        <button class="animated-button">
+                            Get In Touch
+                            <span class="arrow-box">
+                                <img src="/asset/white-arrow.svg" alt="arrow-icon" class="arrow-icon">
+                            </span>
+                        </button>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Certification Services</h2>
+        <p>Get the right certifications to grow your business</p>
+    </section>
+
+    <!-- Loan Grid Section -->
+    <section class="loan-section">
+        <div class="loan-grid">
+            <div class="card" data-loan="Startup India Certificate">
+                <h3>Startup India Certificate</h3>
+                <p>Boost credibility, access benefits, and grow faster with official recognition from Startup India.</p>
+                <button class="see-more">See More</button>
+            </div>
+            <div class="card" data-loan="Tax Exemption Certificate">
+                <h3>Tax Exemption Certificate</h3>
+                <p>Save taxes legally while maximizing your profits and staying compliant with regulations.</p>
+                <button class="see-more">See More</button>
+            </div>
+            <div class="card" data-loan="MSME Certificate">
+                <h3>MSME Certificate</h3>
+                <p>Unlock government subsidies, easier loans, and access to tender opportunities.</p>
+                <button class="see-more">See More</button>
+            </div>
+            <div class="card" data-loan="ISO Certificates">
+                <h3>ISO Certificates</h3>
+                <p>Enhance trust, quality, and open doors to global business opportunities.</p>
+                <button class="see-more">See More</button>
+            </div>
+            <div class="card" data-loan="Make In India Certificates">
+                <h3>Make In India Certificates</h3>
+                <p>Promote local manufacturing and gain valuable government incentives.</p>
+                <button class="see-more">See More</button>
+            </div>
+            <div class="card" data-loan="ZED Certificates">
+                <h3>ZED Certificate</h3>
+                <p>Zero-defect, zero-effect certification for quality assurance and global competitiveness.</p>
+                <button class="see-more">See More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="backdrop"></div>
+    <div class="modal" id="loanModal">
+        <button class="close-modal">×</button>
+        <div id="modalContent">
+            <!-- Content will be loaded here dynamically -->
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="logo">
+                    <img src="/asset/Logo/Abtik white.png" alt="">
+                </div>
+                <div class="email-subscribe">
+                    <input type="email" placeholder="email@AbtikServices">
+                    <button class="send-btn">
+                        <span class="arrow">
+                            <img src="/asset/white-arrow.svg" alt="arrow-icon">
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="contact-info">
+                    <h2 style="color: white;">Visit On</h2>
+                    <p>313, Patel Ave., S.G Highway, Thaltej, <br> Ahmedabad, Gujarat 380054</p>
+                    <h2 style="color: white;">For call</h2>
+                    <p>Monday-Saturday: 10am-7pm <br> +91 89281 38434</p>
+                    <h2 style="color: white;">If You Have Any Query</h2>
+                    <p>+91 98988 02140</p>
+                </div>
+                <div class="footer-column">
+                    <h3>services</h3>
+                    <a href="/service/asset/certification.html">Certification</a>
+                    <a href="/service/asset/loan.html">Loan services</a>
+                    <a href="/service/asset/funding.html">Funding</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="#">Our Story</a>
+                    <a href="/index.html">Home</a>
+                    <a href="/news/news.html">News</a>
+                    <a href="/about-us/about.html">About-us</a>
+                    <a href="/career/career.html">Career</a>
+                    <a href="/contact/contact.html">Contact Us</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <a href="#">Terms of Service</a>
+                    <a href="/asset/policies/privacy.html">Privacy Policy</a>
+                    <a href="/asset/policies/cancellation.html">Cancellation & Refund Policy</a>
+                </div>
+            </div>
+        </div>
+        <div class="social-icons">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(8.53333,8.53333)">
+                        <path
+                            d="M15,3c-6.627,0 -12,5.373 -12,12c0,6.016 4.432,10.984 10.206,11.852v-8.672h-2.969v-3.154h2.969v-2.099c0,-3.475 1.693,-5 4.581,-5c1.383,0 2.115,0.103 2.461,0.149v2.753h-1.97c-1.226,0 -1.654,1.163 -1.654,2.473v1.724h3.593l-0.487,3.154h-3.106v8.697c5.857,-0.794 10.376,-5.802 10.376,-11.877c0,-6.627 -5.373,-12 -12,-12z">
+                        </path>
+                    </g>
+                </g>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(8.53333,8.53333)">
+                        <path
+                            d="M15,2c-7.168,0 -13,5.832 -13,13c0,7.168 5.832,13 13,13c7.168,0 13,-5.832 13,-13c0,-7.168 -5.832,-13 -13,-13zM11.66602,6h6.66602c3.125,0 5.66797,2.54202 5.66797,5.66602v6.66602c0,3.125 -2.54202,5.66797 -5.66602,5.66797h-6.66602c-3.125,0 -5.66797,-2.54202 -5.66797,-5.66602v-6.66602c0,-3.125 2.54202,-5.66797 5.66602,-5.66797zM11.66602,8c-2.021,0 -3.66602,1.64597 -3.66602,3.66797v6.66602c0,2.021 1.64597,3.66602 3.66797,3.66602h6.66602c2.021,0 3.66602,-1.64597 3.66602,-3.66797v-6.66601c0,-2.021 -1.64597,-3.66602 -3.66797,-3.66602zM19.66797,9.66602c0.368,0 0.66602,0.29802 0.66602,0.66602c0,0.368 -0.29801,0.66797 -0.66602,0.66797c-0.368,0 -0.66797,-0.29997 -0.66797,-0.66797c0,-0.368 0.29997,-0.66602 0.66797,-0.66602zM15,10c2.757,0 5,2.243 5,5c0,2.757 -2.243,5 -5,5c-2.757,0 -5,-2.243 -5,-5c0,-2.757 2.243,-5 5,-5zM15,12c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z">
+                        </path>
+                    </g>
+                </g>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(5.12,5.12)">
+                        <path
+                            d="M25,2c-12.682,0 -23,10.317 -23,23c0,12.683 10.318,23 23,23c12.682,0 23,-10.317 23,-23c0,-12.683 -10.318,-23 -23,-23zM18,35h-4v-15h4zM16,17c-1.105,0 -2,-0.895 -2,-2c0,-1.105 0.895,-2 2,-2c1.105,0 2,0.895 2,2c0,1.105 -0.895,2 -2,2zM37,35h-4v-5v-2.5c0,-1.925 -1.575,-3.5 -3.5,-3.5c-1.925,0 -3.5,1.575 -3.5,3.5v7.5h-4v-15h4v1.816c1.168,-1.122 2.752,-1.816 4.5,-1.816c3.59,0 6.5,2.91 6.5,6.5z">
+                        </path>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <div class="footer-bottom">
+            <p class="right"> Made by Abtik Digital. <a href="">@Abtikdigital</a></p>
+            <p class="center">© 2024 AbtikServices. All Rights Reserved. <a href="#">@AbtikServices</a></p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fab-container">
+        <div class="fab-main">
+            <button class="fab-button">
+                <span class="fab-icon">+</span>
+            </button>
+            <div class="fab-actions">
+                <button class="fab-action" id="fab-chatbot">
+                    <i class="fa-solid fa-message"></i>
+                    <span class="tooltip">Chatbot</span>
+                </button>
+                <button class="fab-action" id="fab-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="tooltip">WhatsApp</span>
+                </button>
+                <button class="fab-action" id="fab-call">
+                    <i class="fas fa-phone"></i>
+                    <span class="tooltip">Call Us</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Chatbot Container -->
+        <div class="fab-chatbot">
+            <div class="chatbot-header">
+                <h3>Abtik Assistant</h3>
+                <button class="close-chatbot">×</button>
+            </div>
+            <div class="chatbot-messages">
+                <div class="chatbot-message bot-message">
+                    <p>Hello! I'm Abtik Assistant. How can I help you today?</p>
+                    <div class="chat-suggestions"></div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" placeholder="Type your message..." class="chatbot-text-input">
+                <button class="chatbot-send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+
+
+
+        // Modal functionality
+        const seeMoreButtons = document.querySelectorAll('.see-more');
+        const modal = document.getElementById('loanModal');
+        const backdrop = document.querySelector('.backdrop');
+        const modalContent = document.getElementById('modalContent');
+        const closeModal = document.querySelector('.close-modal');
+
+        const loanDetails = {
+            "Startup India Certificate": `
+                <h2>Startup India Certificate</h2>
+                <p>Officially recognize your business as an innovative startup and unlock exclusive government benefits:</p>
+                <ul>
+                    <li><strong>Tax Benefits:</strong> Enjoy 3-year tax exemptions</li>
+                    <li><strong>Funding Support:</strong> Access government funds and investor networks</li>
+                    <li><strong>IPR Fast-Tracking:</strong> Get priority patent approvals</li>
+                    <li><strong>Simplified Compliance:</strong> Self-certify under labor and environmental laws</li>
+                    <li><strong>Tender Preference:</strong> Eligibility for government tenders without prior experience</li>
+                </ul>
+                <h3>Eligibility:</h3>
+                <ul>
+                    <li>Registered as a Private Ltd, LLP, or Partnership Firm (≤ 10 years old)</li>
+                    <li>Annual turnover ≤ ₹100 crores in any financial year</li>
+                    <li>Working towards innovation, scalability, or new technology</li>
+                    <li>Approval from DPIIT (Dept. for Promotion of Industry & Internal Trade)</li>
+                </ul>
+                <button class="contact-btn">Contact Us to Apply</button>
+            `,
+            "Tax Exemption Certificate": `
+                <h2>Tax Exemption Certificate</h2>
+                <p>Save on taxes while growing your business with our expert assistance:</p>
+                <ul>
+                    <li><strong>3-Year Tax Holiday:</strong> 100% income tax exemption for eligible startups</li>
+                    <li><strong>Investor Confidence:</strong> Enhances credibility for funding</li>
+                    <li><strong>Compliance Assurance:</strong> We handle all paperwork and approvals</li>
+                </ul>
+                <h3>Requirements:</h3>
+                <ul>
+                    <li>DPIIT recognized startup</li>
+                    <li>Innovation-focused business model</li>
+                    <li>Annual revenue under ₹100 crores</li>
+                </ul>
+                <button class="contact-btn">Get Your Tax Benefits</button>
+            `,
+            "MSME Certificate": `
+                <h2>MSME Certificate</h2>
+                <p>Unlock government benefits designed for small and medium businesses:</p>
+                <ul>
+                    <li><strong>Collateral-free loans</strong> under Credit Guarantee Scheme</li>
+                    <li><strong>Tax rebates</strong> on income tax and GST</li>
+                    <li><strong>Subsidies</strong> for patents & trademarks</li>
+                    <li><strong>Priority access</strong> to government tenders</li>
+                </ul>
+                <h3>Eligibility:</h3>
+                <ul>
+                    <li><strong>Manufacturing:</strong> Investment ≤ ₹50 cr & turnover ≤ ₹250 cr</li>
+                    <li><strong>Service Sector:</strong> Investment ≤ ₹20 cr & turnover ≤ ₹100 cr</li>
+                </ul>
+                <button class="contact-btn">Register Your MSME</button>
+            `,
+            "ISO Certificates": `
+                <h2>ISO Certification</h2>
+                <p>Enhance your business credibility with internationally recognized standards:</p>
+                <ul>
+                    <li><strong>ISO 9001:</strong> Quality Management System</li>
+                    <li><strong>ISO 14001:</strong> Environmental Management</li>
+                    <li><strong>ISO 27001:</strong> Information Security</li>
+                    <li><strong>ISO 45001:</strong> Occupational Health & Safety</li>
+                </ul>
+                <h3>Benefits:</h3>
+                <ul>
+                    <li>Improve operational efficiency</li>
+                    <li>Increase customer trust</li>
+                    <li>Access global markets</li>
+                    <li>Win more contracts</li>
+                </ul>
+                <button class="contact-btn">Get ISO Certified</button>
+            `,
+            "Make In India Certificates": `
+                <h2>Make In India Certification</h2>
+                <p>Promote local manufacturing and gain valuable incentives:</p>
+                <ul>
+                    <li><strong>Tax benefits</strong> and subsidies</li>
+                    <li><strong>Priority</strong> in government procurement</li>
+                    <li><strong>Export promotion</strong> schemes</li>
+                    <li><strong>Brand recognition</strong> as domestic manufacturer</li>
+                </ul>
+                <h3>Requirements:</h3>
+                <ul>
+                    <li>Manufacturing unit in India</li>
+                    <li>Minimum 51% domestic value addition</li>
+                    <li>Compliance with quality standards</li>
+                </ul>
+                <button class="contact-btn">Apply for Certification</button>
+            `,
+            "ZED Certificates": `
+                <h2>ZED Certification</h2>
+                <p>Zero Defect Zero Effect certification for manufacturing excellence:</p>
+                <ul>
+                    <li><strong>Quality recognition</strong> for defect-free manufacturing</li>
+                    <li><strong>Environmental compliance</strong> with zero effect</li>
+                    <li><strong>Financial support</strong> up to ₹50 lakhs</li>
+                    <li><strong>Government tenders</strong> priority</li>
+                </ul>
+                <h3>Eligibility:</h3>
+                <ul>
+                    <li>Indian MSME in manufacturing</li>
+                    <li>Quality management systems</li>
+                    <li>Environmental compliance</li>
+                </ul>
+                <button class="contact-btn">Start ZED Certification</button>
+            `
+        };
+
+        // Open modal when "See More" button is clicked
+        seeMoreButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const card = e.target.closest('.card'); // Find the parent card
+                const loanType = card.getAttribute('data-loan');
+                modalContent.innerHTML = loanDetails[loanType];
+                modal.classList.add('show');
+                backdrop.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close modal
+        function closeModalFunc() {
+            modal.classList.remove('show');
+            backdrop.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        closeModal.addEventListener('click', closeModalFunc);
+        backdrop.addEventListener('click', closeModalFunc);
+
+        // Close modal when pressing Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModalFunc();
+            }
+        });
+
+        // Add contact button functionality
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('contact-btn')) {
+                alert('Thank you for your interest! Our team will contact you shortly.');
+                closeModalFunc();
+            }
+        });
+
+        // Animate cards on scroll
+        const animateOnScroll = () => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (cardTop < windowHeight - 100) {
+                    card.style.animationPlayState = 'running';
+                }
+            });
+        };
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.animationPlayState = 'paused';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // FAB Functionality
+        const fabContainer = document.querySelector('.fab-container');
+        const fabButton = document.querySelector('.fab-button');
+        const fabChatbot = document.querySelector('.fab-chatbot');
+        const closeChatbot = document.querySelector('.close-chatbot');
+
+        fabButton.addEventListener('click', () => {
+            fabContainer.classList.toggle('active');
+        });
+
+        document.querySelector('#fab-chatbot').addEventListener('click', () => {
+            fabChatbot.style.display = 'flex';
+            fabContainer.classList.remove('active');
+        });
+
+        closeChatbot.addEventListener('click', () => {
+            fabChatbot.style.display = 'none';
+        });
+
+        document.querySelector('#fab-whatsapp').addEventListener('click', () => {
+            window.open('https://wa.me/+919898802140', '_blank');
+        });
+
+        document.querySelector('#fab-call').addEventListener('click', () => {
+            window.location.href = 'tel:+918928138434';
+        });
+    </script>
+</body>
+
+</html>
