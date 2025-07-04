@@ -1,526 +1,806 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Abtik Services</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <div id="preloader">
-        <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" width="500" height="500">
-            <defs>
-                <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
-                    <stop offset="10%" stop-color="rgba(0, 30, 60, 0.8)" />
-                    <stop offset="60%" stop-color="rgba(0, 0, 0, 1)" />
-                </radialGradient>
-                <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-                    <feGaussianBlur stdDeviation="3" result="blur" />
-                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                </filter>
-            </defs>
-            <circle cx="120" cy="120" r="120" fill="url(#bgGradient)" />
-            <circle cx="120" cy="120" r="110" fill="none" stroke="#007bff" stroke-width="4" stroke-dasharray="690"
-                stroke-dashoffset="0">
-                <animate attributeName="stroke-dashoffset" from="0" to="-690" dur="2s" repeatCount="indefinite" />
-            </circle>
-            <g transform="translate(70, 140) scale(1, -1)">
-                <polyline points="0,0 20,15 40,10 60,40 80,30 100,70" fill="none" stroke="#007bff" stroke-width="3"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <animate attributeName="stroke-dasharray" from="0,200" to="200,0" dur="2s"
-                        repeatCount="indefinite" />
-                </polyline>
-                <circle cx="0" cy="0" r="4" fill="#007bff">
-                    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="20" cy="15" r="4" fill="#007bff">
-                    <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.2s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="40" cy="10" r="4" fill="#007bff">
-                    <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.4s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="60" cy="40" r="4" fill="#007bff">
-                    <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.6s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="80" cy="30" r="4" fill="#007bff">
-                    <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.8s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="100" cy="70" r="4" fill="#007bff">
-                    <animate attributeName="r" values="4;6;4" dur="1.5s" repeatCount="indefinite" />
-                </circle>
-            </g>
-            <text x="120" y="90" text-anchor="middle" fill="#007bff" font-family="Arial" font-size="50"
-                font-weight="bold">
-                ₹
-                <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
-            </text>
-            <g>
-                <text x="120" y="170" text-anchor="middle" fill="#007bff" font-family="Arial" font-size="18"
-                    font-weight="bold">
-                    ABTIK
-                    <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" />
-                </text>
-                <text x="120" y="188" text-anchor="middle" fill="#007bff" font-family="Arial" font-size="12">
-                    Innovate Grow & Transform
-                    <animate attributeName="opacity" values="0;1;0" dur="4s" begin="0.2s" repeatCount="indefinite" />
-                </text>
-            </g>
-        </svg>
+      <svg
+        viewBox="0 0 240 240"
+        xmlns="http://www.w3.org/2000/svg"
+        width="500"
+        height="500"
+      >
+        <defs>
+          <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+            <stop offset="10%" stop-color="rgba(0, 30, 60, 0.8)" />
+            <stop offset="60%" stop-color="rgba(0, 0, 0, 1)" />
+          </radialGradient>
+          <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+        <circle cx="120" cy="120" r="120" fill="url(#bgGradient)" />
+        <circle
+          cx="120"
+          cy="120"
+          r="110"
+          fill="none"
+          stroke="#007bff"
+          stroke-width="4"
+          stroke-dasharray="690"
+          stroke-dashoffset="0"
+        >
+          <animate
+            attributeName="stroke-dashoffset"
+            from="0"
+            to="-690"
+            dur="2s"
+            repeatCount="indefinite"
+          />
+        </circle>
+        <g transform="translate(70, 140) scale(1, -1)">
+          <polyline
+            points="0,0 20,15 40,10 60,40 80,30 100,70"
+            fill="none"
+            stroke="#007bff"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <animate
+              attributeName="stroke-dasharray"
+              from="0,200"
+              to="200,0"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </polyline>
+          <circle cx="0" cy="0" r="4" fill="#007bff">
+            <animate
+              attributeName="opacity"
+              values="0;1;0"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </circle>
+          <circle cx="20" cy="15" r="4" fill="#007bff">
+            <animate
+              attributeName="opacity"
+              values="0;1;0"
+              dur="2s"
+              begin="0.2s"
+              repeatCount="indefinite"
+            />
+          </circle>
+          <circle cx="40" cy="10" r="4" fill="#007bff">
+            <animate
+              attributeName="opacity"
+              values="0;1;0"
+              dur="2s"
+              begin="0.4s"
+              repeatCount="indefinite"
+            />
+          </circle>
+          <circle cx="60" cy="40" r="4" fill="#007bff">
+            <animate
+              attributeName="opacity"
+              values="0;1;0"
+              dur="2s"
+              begin="0.6s"
+              repeatCount="indefinite"
+            />
+          </circle>
+          <circle cx="80" cy="30" r="4" fill="#007bff">
+            <animate
+              attributeName="opacity"
+              values="0;1;0"
+              dur="2s"
+              begin="0.8s"
+              repeatCount="indefinite"
+            />
+          </circle>
+          <circle cx="100" cy="70" r="4" fill="#007bff">
+            <animate
+              attributeName="r"
+              values="4;6;4"
+              dur="1.5s"
+              repeatCount="indefinite"
+            />
+          </circle>
+        </g>
+        <text
+          x="120"
+          y="90"
+          text-anchor="middle"
+          fill="#007bff"
+          font-family="Arial"
+          font-size="50"
+          font-weight="bold"
+        >
+          ₹
+          <animate
+            attributeName="opacity"
+            values="0.7;1;0.7"
+            dur="2s"
+            repeatCount="indefinite"
+          />
+        </text>
+        <g>
+          <text
+            x="120"
+            y="170"
+            text-anchor="middle"
+            fill="#007bff"
+            font-family="Arial"
+            font-size="18"
+            font-weight="bold"
+          >
+            ABTIK
+            <animate
+              attributeName="opacity"
+              values="0;1;0"
+              dur="4s"
+              repeatCount="indefinite"
+            />
+          </text>
+          <text
+            x="120"
+            y="188"
+            text-anchor="middle"
+            fill="#007bff"
+            font-family="Arial"
+            font-size="12"
+          >
+            Innovate Grow & Transform
+            <animate
+              attributeName="opacity"
+              values="0;1;0"
+              dur="4s"
+              begin="0.2s"
+              repeatCount="indefinite"
+            />
+          </text>
+        </g>
+      </svg>
     </div>
-    <div id="main-content" style="display: none;">
-        <header>
-            <div class="container">
-                <a href="/index.html" class="hlogo"><img src="/asset/Logo/Abtik white.png" alt="Logo"></a>
-                <div class="hamburger">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="/index.html" class="active">Home</a></li>
-                        <li><a href="/about-us/about.html">About us</a></li>
-                        <li><a href="/service/service.html">Services</a></li>
-                        <li><a href="/news/news.html">News</a></li>
-                        <li><a href="/career/career.html">Careers</a></li>
-                        <li><a href="/contact/contact.html">Contact</a></li>
-                    </ul>
-                    <div class="cta-button">
-                        <a href="/get-in-touch/get.html">
-                            <button class="animated-button">
-                                Get In Touch
-                                <span class="arrow-box">
-                                    <img src="/asset/white-arrow.svg" alt="arrow-icon" class="arrow-icon">
-                                </span>
-                            </button>
-                        </a>
-                    </div>
-                </nav>
-            </div>
-        </header>
-        <section class="hero">
-            <div class="hero-left">
-                <h2>Your One-Stop Solution <br> for all Business Needs</h2>
-                <p>Empowering Businesses through Comprehensive Solutions: <br> From Fund Management to Legal Compliance,
-                    <br> We've Got You Covered at Abtik Startup Advisor Private Limited
-                </p>
-                <form>
-                    <div class="input-container">
-                        <input type="email" placeholder="Enter your email">
-                        <button class="signup-btn">
-                            Sign up <span class="arrow">
-                                <img src="/asset/white-arrow.svg" alt="arrow-icon" class="arrow-icon">
-                            </span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <div class="hero-right">
-                <div class="cube-container">
-                    <div class="cube">
-                        <div class="cube-face front">Certification</div>
-                        <div class="cube-face back">Compliance</div>
-                        <div class="cube-face right">Funding</div>
-                        <div class="cube-face left">Registration</div>
-                        <div class="cube-face top">Loan Services</div>
-                        <div class="cube-face bottom">Business Growth</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="logo-slider">
-            <div class="slider-wrapper">
-                <div class="logos">
-                    <img src="/asset/Logo/Artboard 1.png" alt="Logo 1">
-                    <img src="/asset/Logo/Artboard 2.png" alt="Logo 2">
-                    <img src="/asset/Logo/Artboard 3.png" alt="Logo 3">
-                    <img src="/asset/Logo/Artboard 4.png" alt="Logo 4">
-                    <img src="/asset/Logo/Artboard 5.png" alt="Logo 5">
-                    <img src="/asset/Logo/Artboard 6.png" alt="Logo 6">
-                    <img src="/asset/Logo/Artboard 7.png" alt="Logo 7">
-                    <img src="/asset/Logo/Artboard 8.png" alt="Logo 8">
-                    <img src="/asset/Logo/Artboard 9.png" alt="Logo 9">
-                    <img src="/asset/Logo/Artboard 10.png" alt="Logo 10">
-                    <img src="/asset/Logo/Artboard 11.png" alt="Logo 11">
-                </div>
-            </div>
-        </section>
-        <h1 class="section-title">Our Services</h1>
-        <section class="grid-container">
-            <div class="grid-item">
-                <span class="icon"><img src="/asset/thumb-up-fill (1).svg" alt="Professional-icon"></span>
-                <h3>Professional consultation</h3>
-                <p>Expert guidance to streamline your business strategy, operations, and growth—tailored solutions for
-                    startups and enterprises....</p>
-            </div>
-            <div class="grid-item">
-                <span class="icon"><img src="/asset/global-fill.svg" alt="global-icon"></span>
-                <h3>Business Registration</h3>
-                <p>Fast and hassle-free company registration, from sole proprietorships to private limited firms,
-                    ensuring legal compliance from day one....</p>
-            </div>
-            <div class="grid-item">
-                <span class="icon"><img src="/asset/flag-2-fill.svg" alt="funding-icon"></span>
-                <h3>Funding Services</h3>
-                <p>Connect with investors, loans, and grants to secure capital for your business expansion and financial
-                    stability....</p>
-            </div>
-            <div class="grid-item">
-                <span class="icon"><img src="/asset/Layer_1.svg" alt="certification-icon"></span>
-                <h3>Certification & licenses</h3>
-                <p>End-to-end support for industry-specific certifications, permits, and licenses to keep your business
-                    compliant and credible....</p>
-            </div>
-            <div class="grid-item">
-                <span class="icon"><img src="/asset/hashtag.svg" alt="trademark-icon"></span>
-                <h3>Trademark & patents</h3>
-                <p>Protect your brand and innovations with seamless trademark registration and patent filing
-                    services....</p>
-            </div>
-            <div class="grid-item">
-                <span class="icon"><img src="/asset/git-branch-fill.svg" alt="compliance-icon"></span>
-                <h3>Compliances & GST</h3>
-                <p>Simplify tax filings, GST compliance, and regulatory requirements to avoid penalties and ensure
-                    smooth business operations....</p>
-            </div>
-        </section>
-        <section id="stats" class="stats-section">
-            <div class="stat-box">
-                <div class="icon">🧭</div>
-                <h2 class="counter" data-target="100">0</h2>
-                <p>Staff</p>
-            </div>
-            <div class="stat-box">
-                <div class="icon">💬</div>
-                <h2 class="counter" data-target="10">0</h2>
-                <p>Awards and Medals</p>
-            </div>
-            <div class="stat-box">
-                <div class="icon">👤</div>
-                <h2 class="counter" data-target="130000">0</h2>
-                <p>Customers</p>
-            </div>
-            <div class="stat-box">
-                <div class="icon">🌀</div>
-                <h2 class="counter" data-target="25">0</h2>
-                <p>Facilities</p>
-            </div>
-        </section>
-        <section class="video-section">
-            <div class="video-container" id="videoContainer">
-                <video id="myVideo" poster="">
-                    <source src="./asset/ABTIK_SERVICES_INTRO.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="video-overlay" id="videoOverlay">
-                    <button class="overlay-button" id="overlayButton">▶</button>
-                </div>
-                <div class="controls" id="controls">
-                    <button id="playPauseBtn" title="Play/Pause">▶</button>
-                    <div class="progress-bar" id="progressBar">
-                        <div class="progress" id="progress"></div>
-                    </div>
-                    <div class="volume-control">
-                        <button id="muteBtn" title="Mute/Unmute">🔊</button>
-                        <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
-                    </div>
-                    <button id="fullScreenBtn" title="Full Screen">⛶</button>
-                </div>
-            </div>
-        </section>
-        <section class="blog-section">
-            <h2 class="section-title">Latest Blog Posts</h2>
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <h3>Startup India Certificate: The Ultimate Guide to Benefits</h3>
-                    <p class="blog-preview">The Startup India Certificate is a must-have for any ambitious entrepreneur.
-                        From tax savings to investor trust, it opens doors most startups never discover.</p>
-                    <a class="read-more" href="/startup.html">Read More <span class="arrow"><img
-                                src="/asset/white-arrow.svg" alt="arrow-icon"></span></a>
-                </div>
-                <div class="blog-card">
-                    <h3>MSME Certificate: The Complete Guide to Udyam Registration Benefits & Process.</h3>
-                    <p class="blog-preview">The MSME Certificate isn’t just paperwork—it’s a growth accelerator. From
-                        loans without collateral to tax savings, it empowers small businesses to compete with giants...
-                    </p>
-                    <a class="read-more" href="/startup.html">Read More <span class="arrow"><img
-                                src="/asset/white-arrow.svg" alt="arrow-icon"></span></a>
-                </div>
-                <div class="blog-card">
-                    <h3>MSME Certificate: The Complete Guide to Udyam Registration Benefits & Process.</h3>
-                    <p class="blog-preview">The MSME Certificate isn’t just paperwork—it’s a growth accelerator. From
-                        loans without collateral to tax savings, it empowers small businesses to compete with giants...
-                    </p>
-                    <a class="read-more" href="/startup.html">Read More <span class="arrow"><img
-                                src="/asset/white-arrow.svg" alt="arrow-icon"></span></a>
-                </div>
-            </div>
-        </section>
-        <section class="testimonial-section">
-            <div class="carousel" id="testimonial-carousel">
-                <div class="card">
-                    <div class="quote">“</div>
-                    <div class="text">The real-time synchronization and AI-powered organization have made our workflow
-                        more efficient than ever.</div>
-                    <div>
-                        <span class="author">Sarah Johnson</span>
-                        <span class="company">TechSavvv Solutions</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="quote">“</div>
-                    <div class="text">Working with this platform has transformed how we manage data and collaborate
-                        across departments.</div>
-                    <div>
-                        <span class="author">Rahul Mehta</span>
-                        <span class="company">InfoCore Pvt Ltd</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="quote">“</div>
-                    <div class="text">Exceptional service and support! The integration was seamless and intuitive.</div>
-                    <div>
-                        <span class="author">Ayesha Khan</span>
-                        <span class="company">BrightPath AI</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="quote">“</div>
-                    <div class="text">A revolutionary product that’s helped us scale operations quickly and efficiently.
-                    </div>
-                    <div>
-                        <span class="author">David Lee</span>
-                        <span class="company">EdgeWare Inc</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="qna" class="qna-section">
-            <h2>Q&A Section</h2>
-            <div class="qna-card">
-                <button class="qna-header">What services does Abtik offer? <span><img src="../asset/white-arrow.svg"
-                            alt="arrow-icon"></span></button>
-                <div class="qna-detail">
-                    <p>Abtik provides professional consultation, business registration, funding services,
-                        certifications, trademarks, and GST compliance services tailored to startups and businesses in
-                        India.</p>
-                </div>
-            </div>
-            <div class="qna-card">
-                <button class="qna-header">How can I contact Abtik for support? <span><img
-                            src="../asset/white-arrow.svg" alt="arrow-icon"></span></button>
-                <div class="qna-detail">
-                    <p>You can reach our support team via email at support@abtik.com or call us at +91 89281 38434,
-                        Monday to Saturday, 10:00 AM to 7:00 PM (IST).</p>
-                </div>
-            </div>
-            <div class="qna-card">
-                <button class="qna-header">Does Abtik assist with funding? <span><img src="../asset/white-arrow.svg"
-                            alt="arrow-icon"></span></button>
-                <div class="qna-detail">
-                    <p>Yes, we help startups and businesses secure funding through various programs and investor
-                        connections, guiding you through the process.</p>
-                </div>
-            </div>
-            <div class="qna-card">
-                <button class="qna-header">What are Abtik's working hours? <span><img src="../asset/white-arrow.svg"
-                            alt="arrow-icon"></span></button>
-                <div class="qna-detail">
-                    <p>Our office is open Monday to Saturday, from 10:00 AM to 7:00 PM (IST), ready to assist with your
-                        business needs.</p>
-                </div>
-            </div>
-            <div class="mail-btn-container">
-                <a href="mailto:support@abtik.com" class="mail-btn">Ask a Question</a>
-            </div>
-        </section>
-        <!-- Contact -->
-        <section id="contact">
-            <div class="contact-container">
-                <div class="contact-form">
-                    <h2>Contact Us</h2>
-                    <input type="text" placeholder="Enter your name">
-                    <input type="text" placeholder="Enter your number">
-                    <input type="email" placeholder="Enter your Email">
-                    <textarea placeholder="Enter your message"></textarea>
-                    <button class="send-btn">
-                        Send For Contact
-                        <span class="arrow">
-                            <img src="/asset/white-arrow.svg" alt="arrow-icon">
-                        </span>
-                    </button>
-                </div>
-                <div class="section-preview">
-                    <div class="animation-container">
-                        <div class="data-visualization">
-                            <div class="circle-pulse"></div>
-                            <div class="connection-line" style="width: 40%; top: 30%; left: 5%; animation-delay: 0.3s;">
-                            </div>
-                            <div class="connection-line"
-                                style="width: 25%; top: 50%; left: 65%; animation-delay: 0.6s;">
-                            </div>
-                            <div class="connection-line"
-                                style="width: 30%; top: 70%; left: 15%; animation-delay: 0.9s;">
-                            </div>
-                            <div class="connection-line"
-                                style="width: 35%; top: 40%; left: 45%; animation-delay: 1.2s;">
-                            </div>
-                            <div class="data-node" style="top: 30%; left: 5%; animation-delay: 0.2s;"></div>
-                            <div class="data-node" style="top: 30%; left: 45%; animation-delay: 0.4s;"></div>
-                            <div class="data-node" style="top: 50%; left: 65%; animation-delay: 0.6s;"></div>
-                            <div class="data-node" style="top: 50%; left: 90%; animation-delay: 0.8s;"></div>
-                            <div class="data-node" style="top: 70%; left: 15%; animation-delay: 1s;"></div>
-                            <div class="data-node" style="top: 70%; left: 45%; animation-delay: 1.2s;"></div>
-                            <div class="data-node" style="top: 40%; left: 45%; animation-delay: 1.4s;"></div>
-                            <div class="data-node" style="top: 40%; left: 80%; animation-delay: 1.6s;"></div>
-                            <div class="message-bubble" style="top: 20%; left: 10%; animation-delay: 0.5s;">How can I
-                                register my business?</div>
-                            <div class="message-bubble" style="top: 75%; left: 60%; animation-delay: 1.5s;">I need help
-                                with
-                                funding!</div>
-                            <div class="message-bubble" style="top: 40%; left: 70%; animation-delay: 2.5s;">GST
-                                registration
-                                services?</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="footer-left">
-                    <div class="logo">
-                        <img src="/asset/Logo/Abtik white.png" alt="Abtik Logo">
-                    </div>
-                    <div class="email-subscribe">
-                        <input type="email" placeholder="email@AbtikServices">
-                        <button class="send-btn">
-                            <span class="arrow">
-                                <img src="/asset/white-arrow.svg" alt="arrow-icon">
-                            </span>
-                        </button>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <div class="contact-info">
-                        <h2>Visit On</h2>
-                        <p>313, Patel Ave., S.G Highway, Thaltej, <br> Ahmedabad, Gujarat 380054</p>
-                        <h2>For Call</h2>
-                        <p>Monday-Saturday: 10am-7pm <br> +91 89281 38434</p>
-                        <h2>If You Have Any Query</h2>
-                        <p>+91 98988 02140</p>
-                    </div>
-                    <div class="footer-column">
-                        <h3>Services</h3>
-                        <a href="/service/asset/certification.html">Certification</a>
-                        <a href="/service/asset/loan.html">Loan Services</a>
-                        <a href="/service/asset/funding.html">Funding</a>
-                    </div>
-                    <div class="footer-column">
-                        <h3>Company</h3>
-                        <a href="#">Our Story</a>
-                        <a href="/index.html">Home</a>
-                        <a href="/news/news.html">News</a>
-                        <a href="/about-us/about.html">About Us</a>
-                        <a href="/career/career.html">Career</a>
-                        <a href="/contact/contact.html">Contact Us</a>
-                    </div>
-                    <div class="footer-column">
-                        <h3>Legal</h3>
-                        <a href="#">Terms of Service</a>
-                        <a href="/asset/policies/privacy.html">Privacy Policy</a>
-                        <a href="/asset/policies/cancellation.html">Cancellation & Refund Policy</a>
-                    </div>
-                </div>
-            </div>
-            <div class="social-icons">
-                <a href="#" aria-label="Facebook">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0,0,256,256">
-                        <g fill="#ffffff" fill-rule="nonzero">
-                            <g transform="scale(8.53333,8.53333)">
-                                <path
-                                    d="M15,3c-6.627,0 -12,5.373 -12,12c0,6.016 4.432,10.984 10.206,11.852v-8.672h-2.969v-3.154h2.969v-2.099c0,-3.475 1.693,-5 4.581,-5c1.383,0 2.115,0.103 2.461,0.149v2.753h-1.97c-1.226,0 -1.654,1.163 -1.654,2.473v1.724h3.593l-0.487,3.154h-3.106v8.697c5.857,-0.794 10.376,-5.802 10.376,-11.877c0,-6.627 -5.373,-12 -12,-12z">
-                                </path>
-                            </g>
-                        </g>
-                    </svg>
-                </a>
-                <a href="#" aria-label="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0,0,256,256">
-                        <g fill="#ffffff" fill-rule="nonzero">
-                            <g transform="scale(8.53333,8.53333)">
-                                <path
-                                    d="M15,2c-7.168,0 -13,5.832 -13,13c0,7.168 5.832,13 13,13c7.168,0 13,-5.832 13,-13c0,-7.168 -5.832,-13 -13,-13zM11.66602,6h6.66602c3.125,0 5.66797,2.54202 5.66797,5.66602v6.66602c0,3.125 -2.54202,5.66797 -5.66602,5.66797h-6.66602c-3.125,0 -5.66797,-2.54202 -5.66797,-5.66602v-6.66602c0,-3.125 2.54202,-5.66797 5.66602,-5.66797zM11.66602,8c-2.021,0 -3.66602,1.64597 -3.66602,3.66797v6.66602c0,2.021 1.64597,3.66602 3.66797,3.66602h6.66602c2.021,0 3.66602,-1.64597 3.66602,-3.66797v-6.66601c0,-2.021 -1.64597,-3.66602 -3.66797,-3.66602zM19.66797,9.66602c0.368,0 0.66602,0.29802 0.66602,0.66602c0,0.368 -0.29801,0.66797 -0.66602,0.66797c-0.368,0 -0.66797,-0.29997 -0.66797,-0.66797c0,-0.368 0.29997,-0.66602 0.66797,-0.66602zM15,10c2.757,0 5,2.243 5,5c0,2.757 -2.243,5 -5,5c-2.757,0 -5,-2.243 -5,-5c0,-2.757 2.243,-5 5,-5zM15,12c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z">
-                                </path>
-                            </g>
-                        </g>
-                    </svg>
-                </a>
-                <a href="#" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0,0,256,256">
-                        <g fill="#ffffff" fill-rule="nonzero">
-                            <g transform="scale(5.12,5.12)">
-                                <path
-                                    d="M25,2c-12.682,0 -23,10.317 -23,23c0,12.683 10.318,23 23,23c12.682,0 23,-10.317 23,-23c0,-12.683 -10.318,-23 -23,-23zM18,35h-4v-15h4zM16,17c-1.105,0 -2,-0.895 -2,-2c0,-1.105 0.895,-2 2,-2c1.105,0 2,0.895 2,2c0,1.105 -0.895,2 -2,2zM37,35h-4v-5v-2.5c0,-1.925 -1.575,-3.5 -3.5,-3.5c-1.925,0 -3.5,1.575 -3.5,3.5v7.5h-4v-15h4v1.816c1.168,-1.122 2.752,-1.816 4.5,-1.816c3.59,0 6.5,2.91 6.5,6.5z">
-                                </path>
-                            </g>
-                        </g>
-                    </svg>
-                </a>
-            </div>
-            <div class="footer-bottom">
-                <p class="right">Made by Abtik Digital. <a href="#">@Abtikdigital</a></p>
-                <p class="center">© 2024 AbtikServices. All Rights Reserved. <a href="#">@AbtikServices</a></p>
-            </div>
-        </footer>
-        <!-- Floating Action Button -->
-        <div class="fab-container">
-            <div class="fab-main">
-                <button class="fab-button">
-                    <span class="fab-icon">+</span>
+    <div
+      class="flex justify-center itemns-center text-center p-4 my-1 bg-white hover:bg-red font-semibold text-xl hover:underline underline-2 border-b border-1 w-full md:w-1/2"
+    >
+      this is text
+    </div>
+    <div id="main-content" style="display: none">
+      <header>
+        <div class="container">
+          <a href="/index.html" class="hlogo"
+            ><img src="/asset/Logo/Abtik white.png" alt="Logo"
+          /></a>
+          <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="/index.html" class="active">Home</a></li>
+              <li><a href="/about-us/about.html">About us</a></li>
+              <li><a href="/service/service.html">Services</a></li>
+              <li><a href="/news/news.html">News</a></li>
+              <li><a href="/career/career.html">Careers</a></li>
+              <li><a href="/contact/contact.html">Contact</a></li>
+            </ul>
+            <div class="cta-button">
+              <a href="/get-in-touch/get.html">
+                <button class="animated-button">
+                  Get In Touch
+                  <span class="arrow-box">
+                    <img
+                      src="/asset/white-arrow.svg"
+                      alt="arrow-icon"
+                      class="arrow-icon"
+                    />
+                  </span>
                 </button>
-                <div class="fab-actions">
-                    <button class="fab-action" id="fab-chatbot">
-                        <i class="fas fa-comment"></i>
-                        <span class="tooltip">Chat with us</span>
-                    </button>
-                    <button class="fab-action" id="fab-whatsapp">
-                        <i class="fab fa-whatsapp"></i>
-                        <span class="tooltip">WhatsApp</span>
-                    </button>
-                    <button class="fab-action" id="fab-call">
-                        <i class="fas fa-phone"></i>
-                        <span class="tooltip">Call us</span>
-                    </button>
-                </div>
+              </a>
             </div>
-            <div class="fab-chatbot" id="chatbot">
-                <div class="chatbot-header">
-                    <h3>Abtik Assistant</h3>
-                    <button class="close-chatbot">&times;</button>
-                </div>
-                <div class="chatbot-messages" id="chatbotMessages">
-                    <div class="chatbot-message bot-message">
-                        <p>Hello! How can I assist you today?</p>
-                    </div>
-                </div>
-                <div class="chatbot-input">
-                    <input type="text" class="chatbot-text-input" id="chatInput" placeholder="Type your message...">
-                    <button class="chatbot-send-btn">Send</button>
-                </div>
-                <div class="chat-suggestions" id="chatSuggestions">
-                    <button class="chat-suggestion">Business Registration</button>
-                    <button class="chat-suggestion">Funding Options</button>
-                    <button class="chat-suggestion">GST Compliance</button>
-                </div>
-            </div>
+          </nav>
         </div>
+      </header>
+      <section class="hero">
+        <div class="hero-left">
+          <h2>
+            Your One-Stop Solution <br />
+            for all Business Needs
+          </h2>
+          <p>
+            Empowering Businesses through Comprehensive Solutions: <br />
+            From Fund Management to Legal Compliance, <br />
+            We've Got You Covered at Abtik Startup Advisor Private Limited
+          </p>
+          <form>
+            <div class="input-container">
+              <input type="email" placeholder="Enter your email" />
+              <button class="signup-btn">
+                Sign up
+                <span class="arrow">
+                  <img
+                    src="/asset/white-arrow.svg"
+                    alt="arrow-icon"
+                    class="arrow-icon"
+                  />
+                </span>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="hero-right">
+          <div class="cube-container">
+            <div class="cube">
+              <div class="cube-face front">Certification</div>
+              <div class="cube-face back">Compliance</div>
+              <div class="cube-face right">Funding</div>
+              <div class="cube-face left">Registration</div>
+              <div class="cube-face top">Loan Services</div>
+              <div class="cube-face bottom">Business Growth</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="logo-slider">
+        <div class="slider-wrapper">
+          <div class="logos">
+            <img src="/asset/Logo/Artboard 1.png" alt="Logo 1" />
+            <img src="/asset/Logo/Artboard 2.png" alt="Logo 2" />
+            <img src="/asset/Logo/Artboard 3.png" alt="Logo 3" />
+            <img src="/asset/Logo/Artboard 4.png" alt="Logo 4" />
+            <img src="/asset/Logo/Artboard 5.png" alt="Logo 5" />
+            <img src="/asset/Logo/Artboard 6.png" alt="Logo 6" />
+            <img src="/asset/Logo/Artboard 7.png" alt="Logo 7" />
+            <img src="/asset/Logo/Artboard 8.png" alt="Logo 8" />
+            <img src="/asset/Logo/Artboard 9.png" alt="Logo 9" />
+            <img src="/asset/Logo/Artboard 10.png" alt="Logo 10" />
+            <img src="/asset/Logo/Artboard 11.png" alt="Logo 11" />
+          </div>
+        </div>
+      </section>
+      <h1 class="section-title">Our Services</h1>
+      <section class="grid-container">
+        <div class="grid-item">
+          <span class="icon"
+            ><img src="/asset/thumb-up-fill (1).svg" alt="Professional-icon"
+          /></span>
+          <h3>Professional consultation</h3>
+          <p>
+            Expert guidance to streamline your business strategy, operations,
+            and growth—tailored solutions for startups and enterprises....
+          </p>
+        </div>
+        <div class="grid-item">
+          <span class="icon"
+            ><img src="/asset/global-fill.svg" alt="global-icon"
+          /></span>
+          <h3>Business Registration</h3>
+          <p>
+            Fast and hassle-free company registration, from sole proprietorships
+            to private limited firms, ensuring legal compliance from day one....
+          </p>
+        </div>
+        <div class="grid-item">
+          <span class="icon"
+            ><img src="/asset/flag-2-fill.svg" alt="funding-icon"
+          /></span>
+          <h3>Funding Services</h3>
+          <p>
+            Connect with investors, loans, and grants to secure capital for your
+            business expansion and financial stability....
+          </p>
+        </div>
+        <div class="grid-item">
+          <span class="icon"
+            ><img src="/asset/Layer_1.svg" alt="certification-icon"
+          /></span>
+          <h3>Certification & licenses</h3>
+          <p>
+            End-to-end support for industry-specific certifications, permits,
+            and licenses to keep your business compliant and credible....
+          </p>
+        </div>
+        <div class="grid-item">
+          <span class="icon"
+            ><img src="/asset/hashtag.svg" alt="trademark-icon"
+          /></span>
+          <h3>Trademark & patents</h3>
+          <p>
+            Protect your brand and innovations with seamless trademark
+            registration and patent filing services....
+          </p>
+        </div>
+        <div class="grid-item">
+          <span class="icon"
+            ><img src="/asset/git-branch-fill.svg" alt="compliance-icon"
+          /></span>
+          <h3>Compliances & GST</h3>
+          <p>
+            Simplify tax filings, GST compliance, and regulatory requirements to
+            avoid penalties and ensure smooth business operations....
+          </p>
+        </div>
+      </section>
+      <section id="stats" class="stats-section">
+        <div class="stat-box">
+          <div class="icon">🧭</div>
+          <h2 class="counter" data-target="100">0</h2>
+          <p>Staff</p>
+        </div>
+        <div class="stat-box">
+          <div class="icon">💬</div>
+          <h2 class="counter" data-target="10">0</h2>
+          <p>Awards and Medals</p>
+        </div>
+        <div class="stat-box">
+          <div class="icon">👤</div>
+          <h2 class="counter" data-target="130000">0</h2>
+          <p>Customers</p>
+        </div>
+        <div class="stat-box">
+          <div class="icon">🌀</div>
+          <h2 class="counter" data-target="25">0</h2>
+          <p>Facilities</p>
+        </div>
+      </section>
+      <section class="video-section">
+        <div class="video-container" id="videoContainer">
+          <video id="myVideo" poster="">
+            <source src="./asset/ABTIK_SERVICES_INTRO.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-overlay" id="videoOverlay">
+            <button class="overlay-button" id="overlayButton">▶</button>
+          </div>
+          <div class="controls" id="controls">
+            <button id="playPauseBtn" title="Play/Pause">▶</button>
+            <div class="progress-bar" id="progressBar">
+              <div class="progress" id="progress"></div>
+            </div>
+            <div class="volume-control">
+              <button id="muteBtn" title="Mute/Unmute">🔊</button>
+              <input
+                type="range"
+                id="volume"
+                min="0"
+                max="1"
+                step="0.1"
+                value="1"
+              />
+            </div>
+            <button id="fullScreenBtn" title="Full Screen">⛶</button>
+          </div>
+        </div>
+      </section>
+      <section class="blog-section">
+        <h2 class="section-title">Latest Blog Posts</h2>
+        <div class="blog-grid">
+          <div class="blog-card">
+            <h3>Startup India Certificate: The Ultimate Guide to Benefits</h3>
+            <p class="blog-preview">
+              The Startup India Certificate is a must-have for any ambitious
+              entrepreneur. From tax savings to investor trust, it opens doors
+              most startups never discover.
+            </p>
+            <a class="read-more" href="/startup.html"
+              >Read More
+              <span class="arrow"
+                ><img src="/asset/white-arrow.svg" alt="arrow-icon" /></span
+            ></a>
+          </div>
+          <div class="blog-card">
+            <h3>
+              MSME Certificate: The Complete Guide to Udyam Registration
+              Benefits & Process.
+            </h3>
+            <p class="blog-preview">
+              The MSME Certificate isn’t just paperwork—it’s a growth
+              accelerator. From loans without collateral to tax savings, it
+              empowers small businesses to compete with giants...
+            </p>
+            <a class="read-more" href="/startup.html"
+              >Read More
+              <span class="arrow"
+                ><img src="/asset/white-arrow.svg" alt="arrow-icon" /></span
+            ></a>
+          </div>
+          <div class="blog-card">
+            <h3>
+              MSME Certificate: The Complete Guide to Udyam Registration
+              Benefits & Process.
+            </h3>
+            <p class="blog-preview">
+              The MSME Certificate isn’t just paperwork—it’s a growth
+              accelerator. From loans without collateral to tax savings, it
+              empowers small businesses to compete with giants...
+            </p>
+            <a class="read-more" href="/startup.html"
+              >Read More
+              <span class="arrow"
+                ><img src="/asset/white-arrow.svg" alt="arrow-icon" /></span
+            ></a>
+          </div>
+        </div>
+      </section>
+      <section class="testimonial-section">
+        <div class="carousel" id="testimonial-carousel">
+          <div class="card">
+            <div class="quote">“</div>
+            <div class="text">
+              The real-time synchronization and AI-powered organization have
+              made our workflow more efficient than ever.
+            </div>
+            <div>
+              <span class="author">Sarah Johnson</span>
+              <span class="company">TechSavvv Solutions</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="quote">“</div>
+            <div class="text">
+              Working with this platform has transformed how we manage data and
+              collaborate across departments.
+            </div>
+            <div>
+              <span class="author">Rahul Mehta</span>
+              <span class="company">InfoCore Pvt Ltd</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="quote">“</div>
+            <div class="text">
+              Exceptional service and support! The integration was seamless and
+              intuitive.
+            </div>
+            <div>
+              <span class="author">Ayesha Khan</span>
+              <span class="company">BrightPath AI</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="quote">“</div>
+            <div class="text">
+              A revolutionary product that’s helped us scale operations quickly
+              and efficiently.
+            </div>
+            <div>
+              <span class="author">David Lee</span>
+              <span class="company">EdgeWare Inc</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="qna" class="qna-section">
+        <h2>Q&A Section</h2>
+        <div class="qna-card">
+          <button class="qna-header">
+            What services does Abtik offer?
+            <span><img src="../asset/white-arrow.svg" alt="arrow-icon" /></span>
+          </button>
+          <div class="qna-detail">
+            <p>
+              Abtik provides professional consultation, business registration,
+              funding services, certifications, trademarks, and GST compliance
+              services tailored to startups and businesses in India.
+            </p>
+          </div>
+        </div>
+        <div class="qna-card">
+          <button class="qna-header">
+            How can I contact Abtik for support?
+            <span><img src="../asset/white-arrow.svg" alt="arrow-icon" /></span>
+          </button>
+          <div class="qna-detail">
+            <p>
+              You can reach our support team via email at support@abtik.com or
+              call us at +91 89281 38434, Monday to Saturday, 10:00 AM to 7:00
+              PM (IST).
+            </p>
+          </div>
+        </div>
+        <div class="qna-card">
+          <button class="qna-header">
+            Does Abtik assist with funding?
+            <span><img src="../asset/white-arrow.svg" alt="arrow-icon" /></span>
+          </button>
+          <div class="qna-detail">
+            <p>
+              Yes, we help startups and businesses secure funding through
+              various programs and investor connections, guiding you through the
+              process.
+            </p>
+          </div>
+        </div>
+        <div class="qna-card">
+          <button class="qna-header">
+            What are Abtik's working hours?
+            <span><img src="../asset/white-arrow.svg" alt="arrow-icon" /></span>
+          </button>
+          <div class="qna-detail">
+            <p>
+              Our office is open Monday to Saturday, from 10:00 AM to 7:00 PM
+              (IST), ready to assist with your business needs.
+            </p>
+          </div>
+        </div>
+        <div class="mail-btn-container">
+          <a href="mailto:support@abtik.com" class="mail-btn">Ask a Question</a>
+        </div>
+      </section>
+      <!-- Contact -->
+      <section id="contact">
+        <div class="contact-container">
+          <div class="contact-form">
+            <h2>Contact Us</h2>
+            <input type="text" placeholder="Enter your name" />
+            <input type="text" placeholder="Enter your number" />
+            <input type="email" placeholder="Enter your Email" />
+            <textarea placeholder="Enter your message"></textarea>
+            <button class="send-btn">
+              Send For Contact
+              <span class="arrow">
+                <img src="/asset/white-arrow.svg" alt="arrow-icon" />
+              </span>
+            </button>
+          </div>
+          <div class="section-preview">
+            <div class="animation-container">
+              <div class="data-visualization">
+                <div class="circle-pulse"></div>
+                <div
+                  class="connection-line"
+                  style="width: 40%; top: 30%; left: 5%; animation-delay: 0.3s"
+                ></div>
+                <div
+                  class="connection-line"
+                  style="width: 25%; top: 50%; left: 65%; animation-delay: 0.6s"
+                ></div>
+                <div
+                  class="connection-line"
+                  style="width: 30%; top: 70%; left: 15%; animation-delay: 0.9s"
+                ></div>
+                <div
+                  class="connection-line"
+                  style="width: 35%; top: 40%; left: 45%; animation-delay: 1.2s"
+                ></div>
+                <div
+                  class="data-node"
+                  style="top: 30%; left: 5%; animation-delay: 0.2s"
+                ></div>
+                <div
+                  class="data-node"
+                  style="top: 30%; left: 45%; animation-delay: 0.4s"
+                ></div>
+                <div
+                  class="data-node"
+                  style="top: 50%; left: 65%; animation-delay: 0.6s"
+                ></div>
+                <div
+                  class="data-node"
+                  style="top: 50%; left: 90%; animation-delay: 0.8s"
+                ></div>
+                <div
+                  class="data-node"
+                  style="top: 70%; left: 15%; animation-delay: 1s"
+                ></div>
+                <div
+                  class="data-node"
+                  style="top: 70%; left: 45%; animation-delay: 1.2s"
+                ></div>
+                <div
+                  class="data-node"
+                  style="top: 40%; left: 45%; animation-delay: 1.4s"
+                ></div>
+                <div
+                  class="data-node"
+                  style="top: 40%; left: 80%; animation-delay: 1.6s"
+                ></div>
+                <div
+                  class="message-bubble"
+                  style="top: 20%; left: 10%; animation-delay: 0.5s"
+                >
+                  How can I register my business?
+                </div>
+                <div
+                  class="message-bubble"
+                  style="top: 75%; left: 60%; animation-delay: 1.5s"
+                >
+                  I need help with funding!
+                </div>
+                <div
+                  class="message-bubble"
+                  style="top: 40%; left: 70%; animation-delay: 2.5s"
+                >
+                  GST registration services?
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-left">
+            <div class="logo">
+              <img src="/asset/Logo/Abtik white.png" alt="Abtik Logo" />
+            </div>
+            <div class="email-subscribe">
+              <input type="email" placeholder="email@AbtikServices" />
+              <button class="send-btn">
+                <span class="arrow">
+                  <img src="/asset/white-arrow.svg" alt="arrow-icon" />
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="footer-links">
+            <div class="contact-info">
+              <h2>Visit On</h2>
+              <p>
+                313, Patel Ave., S.G Highway, Thaltej, <br />
+                Ahmedabad, Gujarat 380054
+              </p>
+              <h2>For Call</h2>
+              <p>
+                Monday-Saturday: 10am-7pm <br />
+                +91 89281 38434
+              </p>
+              <h2>If You Have Any Query</h2>
+              <p>+91 98988 02140</p>
+            </div>
+            <div class="footer-column">
+              <h3>Services</h3>
+              <a href="/service/asset/certification.html">Certification</a>
+              <a href="/service/asset/loan.html">Loan Services</a>
+              <a href="/service/asset/funding.html">Funding</a>
+            </div>
+            <div class="footer-column">
+              <h3>Company</h3>
+              <a href="#">Our Story</a>
+              <a href="/index.html">Home</a>
+              <a href="/news/news.html">News</a>
+              <a href="/about-us/about.html">About Us</a>
+              <a href="/career/career.html">Career</a>
+              <a href="/contact/contact.html">Contact Us</a>
+            </div>
+            <div class="footer-column">
+              <h3>Legal</h3>
+              <a href="#">Terms of Service</a>
+              <a href="/asset/policies/privacy.html">Privacy Policy</a>
+              <a href="/asset/policies/cancellation.html"
+                >Cancellation & Refund Policy</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0,0,256,256"
+            >
+              <g fill="#ffffff" fill-rule="nonzero">
+                <g transform="scale(8.53333,8.53333)">
+                  <path
+                    d="M15,3c-6.627,0 -12,5.373 -12,12c0,6.016 4.432,10.984 10.206,11.852v-8.672h-2.969v-3.154h2.969v-2.099c0,-3.475 1.693,-5 4.581,-5c1.383,0 2.115,0.103 2.461,0.149v2.753h-1.97c-1.226,0 -1.654,1.163 -1.654,2.473v1.724h3.593l-0.487,3.154h-3.106v8.697c5.857,-0.794 10.376,-5.802 10.376,-11.877c0,-6.627 -5.373,-12 -12,-12z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0,0,256,256"
+            >
+              <g fill="#ffffff" fill-rule="nonzero">
+                <g transform="scale(8.53333,8.53333)">
+                  <path
+                    d="M15,2c-7.168,0 -13,5.832 -13,13c0,7.168 5.832,13 13,13c7.168,0 13,-5.832 13,-13c0,-7.168 -5.832,-13 -13,-13zM11.66602,6h6.66602c3.125,0 5.66797,2.54202 5.66797,5.66602v6.66602c0,3.125 -2.54202,5.66797 -5.66602,5.66797h-6.66602c-3.125,0 -5.66797,-2.54202 -5.66797,-5.66602v-6.66602c0,-3.125 2.54202,-5.66797 5.66602,-5.66797zM11.66602,8c-2.021,0 -3.66602,1.64597 -3.66602,3.66797v6.66602c0,2.021 1.64597,3.66602 3.66797,3.66602h6.66602c2.021,0 3.66602,-1.64597 3.66602,-3.66797v-6.66601c0,-2.021 -1.64597,-3.66602 -3.66797,-3.66602zM19.66797,9.66602c0.368,0 0.66602,0.29802 0.66602,0.66602c0,0.368 -0.29801,0.66797 -0.66602,0.66797c-0.368,0 -0.66797,-0.29997 -0.66797,-0.66797c0,-0.368 0.29997,-0.66602 0.66797,-0.66602zM15,10c2.757,0 5,2.243 5,5c0,2.757 -2.243,5 -5,5c-2.757,0 -5,-2.243 -5,-5c0,-2.757 2.243,-5 5,-5zM15,12c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0,0,256,256"
+            >
+              <g fill="#ffffff" fill-rule="nonzero">
+                <g transform="scale(5.12,5.12)">
+                  <path
+                    d="M25,2c-12.682,0 -23,10.317 -23,23c0,12.683 10.318,23 23,23c12.682,0 23,-10.317 23,-23c0,-12.683 -10.318,-23 -23,-23zM18,35h-4v-15h4zM16,17c-1.105,0 -2,-0.895 -2,-2c0,-1.105 0.895,-2 2,-2c1.105,0 2,0.895 2,2c0,1.105 -0.895,2 -2,2zM37,35h-4v-5v-2.5c0,-1.925 -1.575,-3.5 -3.5,-3.5c-1.925,0 -3.5,1.575 -3.5,3.5v7.5h-4v-15h4v1.816c1.168,-1.122 2.752,-1.816 4.5,-1.816c3.59,0 6.5,2.91 6.5,6.5z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </a>
+        </div>
+        <div class="footer-bottom">
+          <p class="right">
+            Made by Abtik Digital. <a href="#">@Abtikdigital</a>
+          </p>
+          <p class="center">
+            © 2024 AbtikServices. All Rights Reserved.
+            <a href="#">@AbtikServices</a>
+          </p>
+        </div>
+      </footer>
+      <!-- Floating Action Button -->
+      <div class="fab-container">
+        <div class="fab-main">
+          <button class="fab-button">
+            <span class="fab-icon">+</span>
+          </button>
+          <div class="fab-actions">
+            <button class="fab-action" id="fab-chatbot">
+              <i class="fas fa-comment"></i>
+              <span class="tooltip">Chat with us</span>
+            </button>
+            <button class="fab-action" id="fab-whatsapp">
+              <i class="fab fa-whatsapp"></i>
+              <span class="tooltip">WhatsApp</span>
+            </button>
+            <button class="fab-action" id="fab-call">
+              <i class="fas fa-phone"></i>
+              <span class="tooltip">Call us</span>
+            </button>
+          </div>
+        </div>
+        <div class="fab-chatbot" id="chatbot">
+          <div class="chatbot-header">
+            <h3>Abtik Assistant</h3>
+            <button class="close-chatbot">&times;</button>
+          </div>
+          <div class="chatbot-messages" id="chatbotMessages">
+            <div class="chatbot-message bot-message">
+              <p>Hello! How can I assist you today?</p>
+            </div>
+          </div>
+          <div class="chatbot-input">
+            <input
+              type="text"
+              class="chatbot-text-input"
+              id="chatInput"
+              placeholder="Type your message..."
+            />
+            <button class="chatbot-send-btn">Send</button>
+          </div>
+          <div class="chat-suggestions" id="chatSuggestions">
+            <button class="chat-suggestion">Business Registration</button>
+            <button class="chat-suggestion">Funding Options</button>
+            <button class="chat-suggestion">GST Compliance</button>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -529,6 +809,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
